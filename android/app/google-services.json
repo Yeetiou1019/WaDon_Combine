@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "788303852952",
+    "firebase_url": "https://wadone-8ae44.firebaseio.com",
+    "project_id": "wadone-8ae44",
+    "storage_bucket": "wadone-8ae44.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:788303852952:android:51b71034a0ad8b4d2527ed",
+        "android_client_info": {
+          "package_name": "com.example.wadone_main"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "788303852952-kmkip681aljja24rcs3vctmggvajablj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrG5gmECq5JcXmATm-dmsCY8-yHOp-Bqk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "788303852952-kmkip681aljja24rcs3vctmggvajablj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "788303852952-c74rf8f2h20ummm2crn2fqi15ao8n973.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.wadon1"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
