@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/yee/Desktop/wadon_main-master 2/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
+            "outputFile": "C:\\Users\\oaoxd\\OneDrive\\Desktop\\WaDon_Combine-master\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hdpi-v4\\values-hdpi-v4.xml",
             "map": [
                 {
-                    "source": "/Users/yee/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/93ae11ecad8b3c1db496c53c402ca37d/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "source": "C:\\Users\\oaoxd\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.1.0.aar\\65e69799bfbdaa3ffe7598553b8a8079\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

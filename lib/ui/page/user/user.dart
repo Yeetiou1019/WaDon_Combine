@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 class User extends StatefulWidget {
+  final String account;
+  const User({Key key,this.account}) : super(key:key);
   @override
   _UserPageState createState() => _UserPageState();
 }
@@ -53,14 +55,14 @@ return SingleChildScrollView(
 _profile(){
 return  Column(
         children: <Widget>[
-          Image.asset('assets/man.jpg'),
+          Image.asset('assets/dog_akitainu.png'),
           Container(
               width: 190,
               decoration: new BoxDecoration(
                   shape: BoxShape.circle,
                   image: new DecorationImage(
                       fit: BoxFit.fill,
-                      image: const AssetImage('assets/man.jpg')))),
+                      image: const AssetImage('assets/dog_akitainu.png')))),
           Column(
             children: <Widget>[
               Container(
@@ -77,6 +79,9 @@ return  Column(
                               ),
                               Row(
                                 children: <Widget>[Text('學號:')],
+                              ),
+                              Row(
+                                children: <Widget>[Text('電子信箱:')],
                               ),
                               Row(
                                 children: <Widget>[Text('電話:')],
@@ -96,6 +101,9 @@ return  Column(
                               ),
                               Row(
                                 children: <Widget>[Text('1105137246')],
+                              ),
+                              Row(
+                                children: <Widget>[Text('123')],
                               ),
                               Row(
                                 children: <Widget>[Text('0968686868')],

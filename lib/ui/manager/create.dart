@@ -309,4 +309,79 @@ Widget plocaltion() {
           );
         });
   }
+
+  
+
+//   Widget actstartField() {
+//     return StreamBuilder(
+//         stream: _bloc.actstart,
+//         builder: (context, AsyncSnapshot<Timestamp> snapshot) {
+//           return TextField(
+//             onChanged: _bloc.changeid,
+//             obscureText: false,
+//             decoration: InputDecoration(
+//                 contentPadding: EdgeInsets.all(10.0),
+//                 border: OutlineInputBorder(
+//                   borderRadius: BorderRadius.circular(15.0),
+//                 ),
+//                 hintText: 'enter something',
+//                 errorText: snapshot.error),
+//           );
+//         });
+//   }
+
+//   Widget actendField() {
+//     return StreamBuilder(
+//         stream: _bloc.pid,
+//         builder: (context, AsyncSnapshot<String> snapshot) {
+//           return TextField(
+//             onChanged: _bloc.changeid,
+//             obscureText: false,
+//             decoration: InputDecoration(
+//                 contentPadding: EdgeInsets.all(10.0),
+//                 border: OutlineInputBorder(
+//                   borderRadius: BorderRadius.circular(15.0),
+//                 ),
+//                 hintText: 'enter something',
+//                 errorText: snapshot.error),
+//           );
+//         });
+//   }
+
+//   Widget singupField() {
+//     return StreamBuilder(
+//         stream: _bloc.pid,
+//         builder: (context, AsyncSnapshot<String> snapshot) {
+//           return TextField(
+//             onChanged: _bloc.changeid,
+//             obscureText: false,
+//             decoration: InputDecoration(
+//                 contentPadding: EdgeInsets.all(10.0),
+//                 border: OutlineInputBorder(
+//                   borderRadius: BorderRadius.circular(15.0),
+//                 ),
+//                 hintText: 'enter something',
+//                 errorText: snapshot.error),
+//           );
+//         });
+//   }
+
+//   Widget singendField() {
+//     return StreamBuilder(
+//         stream: _bloc.pid,
+//         builder: (context, AsyncSnapshot<String> snapshot) {
+//           return TextField(
+//             onChanged: _bloc.changeid,
+//             obscureText: false,
+//             decoration: InputDecoration(
+//                 contentPadding: EdgeInsets.all(10.0),
+//                 border: OutlineInputBorder(
+//                   borderRadius: BorderRadius.circular(15.0),
+//                 ),
+//                 hintText: 'enter something',
+//                 errorText: snapshot.error),
+//           );
+//         });
+//   }
+// }
 }

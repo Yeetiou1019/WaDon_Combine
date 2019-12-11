@@ -28,7 +28,9 @@ Future getClub() async{
               shrinkWrap: true,
               itemCount: snapshot.data.length,
               itemBuilder: (BuildContext context,index){
-                imageUrl =snapshot.data[index].data['image'];
+                Firestore.instance.collection('club').where("c_name",isEqualTo: snapshot.data[index].data['c_name']).snapshots().listen((dataSnapshot){  
+                  imageUrl = dataSnapshot.documents[0].data['image'];
+                });
                 return ListTile(
                   title: Text(snapshot.data[index].data['c_name']),
                   leading: CircleAvatar(

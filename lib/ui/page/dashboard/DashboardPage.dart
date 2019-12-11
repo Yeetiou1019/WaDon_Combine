@@ -10,7 +10,8 @@ import 'package:carousel_pro/carousel_pro.dart';
 import 'package:wadone_main/ui/page/activity/ActivityPage.dart';
 
 class DashboardPage extends StatefulWidget {
-  const DashboardPage({Key key}) : super(key:key);
+  final String account;
+  const DashboardPage({Key key, this.account}) : super(key: key);
   @override
   _DashboardState createState() {
     return _DashboardState();
@@ -88,6 +89,7 @@ class _DashboardState extends State<DashboardPage> {
           ],
         ));
   }
+
   ListView buildList(List<Detail> goalsList) {
     return ListView.separated(
         separatorBuilder: (BuildContext context, int index) => Divider(),
@@ -98,13 +100,22 @@ class _DashboardState extends State<DashboardPage> {
           return InkWell(
             child: ListTile(
               title: Text(
-                detail.title,///活動名稱
+                detail.title,
+
+                ///活動名稱
                 textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 24.0,fontWeight: FontWeight.bold,),
+                style: TextStyle(
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-              subtitle: Text('主辦單位 : '+detail.club),///社團名稱
+              subtitle: Text('主辦單位 : ' + detail.club),
+
+              ///社團名稱
               trailing: Text(
-                detail.statue,///活動狀態
+                detail.statue,
+
+                ///活動狀態
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 12.0,
@@ -167,8 +178,6 @@ Widget buildTextfield() {
   );
 }
 
-
-
 Widget buttonGroup() {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -181,7 +190,8 @@ Widget buttonGroup() {
   );
 }
 
-Widget buildbutton() {///foreach and build every #hastags from firestore 
+Widget buildbutton() {
+  ///foreach and build every #hastags from firestore
   return OutlineButton(
       hoverColor: Colors.grey[800],
       borderSide: BorderSide(

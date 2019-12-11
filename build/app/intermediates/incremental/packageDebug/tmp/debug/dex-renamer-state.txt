@@ -1,10 +1,10 @@
-#Tue Dec 10 19:20:01 CST 2019
+#Thu Dec 12 04:16:58 CST 2019
 path.2=classes3.dex
 path.1=classes2.dex
 path.0=classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
-base.2=/Users/yee/Desktop/wadon_main-master 2/build/app/intermediates/transforms/dexMerger/debug/0
-base.1=/Users/yee/Desktop/wadon_main-master 2/build/app/intermediates/transforms/dexMerger/debug/0
-base.0=/Users/yee/Desktop/wadon_main-master 2/build/app/intermediates/transforms/dexMerger/debug/0
+base.2=C\:\\Users\\oaoxd\\OneDrive\\Desktop\\WaDon_Combine-master\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
+base.1=C\:\\Users\\oaoxd\\OneDrive\\Desktop\\WaDon_Combine-master\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
+base.0=C\:\\Users\\oaoxd\\OneDrive\\Desktop\\WaDon_Combine-master\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0

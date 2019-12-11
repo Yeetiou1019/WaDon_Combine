@@ -1,2 +1,2 @@
-# Referenced at /Users/yee/Desktop/wadon_main-master 2/build/app/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:28
+# Referenced at C:\Users\oaoxd\OneDrive\Desktop\WaDon_Combine-master\build\app\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:28
 -keep class io.flutter.app.FlutterApplication { <init>(...); }

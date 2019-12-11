@@ -1,3 +1,5 @@
+import 'package:wadone_main/bloc/userbloc.dart';
+
 import './authentication_bloc/bloc/bloc.dart';
 import './firebase/user_repository.dart';
 import './login/login_page.dart';
@@ -43,6 +45,8 @@ class _MyAppState extends State<MyApp> {
         Provider(
           builder: (context) => Managerbloc(),
         ),
+        Provider(builder: (context) => Userbloc(),)
+        // Provider<String>.value(value: state.userName)
         // ChangeNotifierProvider(
         //   builder: (context)=>Userbloc(),
         // ),  

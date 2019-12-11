@@ -100,4 +100,10 @@ class Repository {
 
   Future<void> edit(String thatclubid,String activeId,String ptitle, String pcontent, String clublimit, String numlimit, String plocaltion, String pnote,String statue,String name) =>
   _firestoreProvider.edit(thatclubid,activeId,ptitle,pcontent,clublimit,numlimit,plocaltion,pnote,statue,name);
+
+  Stream<DocumentSnapshot> getUserData(String account) => _firestoreProvider.getUserData(account);
+
+  Stream<QuerySnapshot> subscribeList(String account) =>_firestoreProvider.subscribeList(account);
+
+  Stream<QuerySnapshot> clubpost(String clubid) => _firestoreProvider.clubpost(clubid);
 }

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/yee/Desktop/wadon_main-master 2/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
+            "outputFile": "C:\\Users\\oaoxd\\OneDrive\\Desktop\\WaDon_Combine-master\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "/Users/yee/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/08ac8289fb665b88dabc9066aa67c0e3/res/values-v16/values-v16.xml",
+                    "source": "C:\\Users\\oaoxd\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.1.0.aar\\1568eee8539524a02dfa932a690c001e\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/Users/yee/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/93ae11ecad8b3c1db496c53c402ca37d/res/values-v16/values-v16.xml",
+                    "source": "C:\\Users\\oaoxd\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.1.0.aar\\65e69799bfbdaa3ffe7598553b8a8079\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

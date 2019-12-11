@@ -1,374 +1,270 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:provider/provider.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:wadone_main/bloc/managerbloc.dart';
+import 'package:wadone_main/bloc/pagebloc.dart';
+import 'package:wadone_main/models/club.dart';
+import 'package:wadone_main/models/detail.dart';
+import 'package:wadone_main/ui/page/activity/activeDetailPage.dart';
+import 'package:wadone_main/ui/page/subscription/DetailSubscription.dart';
 
 class SubscriptionPage extends StatefulWidget {
-  const SubscriptionPage({Key key}) : super(key:key);
+  final String account;
+  const SubscriptionPage({Key key, this.account}) : super(key: key);
   @override
   _SubscriptionPageState createState() => _SubscriptionPageState();
 }
 
 class _SubscriptionPageState extends State<SubscriptionPage> {
   Managerbloc _bloc;
+  PageBloc pageBloc;
   TextEditingController myController = TextEditingController();
 
   void didChangeDependencies() async {
     super.didChangeDependencies();
     _bloc = Provider.of<Managerbloc>(context);
+    pageBloc = Provider.of<PageBloc>(context);
+    pageBloc.useraccount(widget.account);
   }
 
   @override
   void dispose() {
     super.dispose();
     _bloc.dispose();
-  }
-
-  Future<bool> _onWillPop() {
-    Navigator.pop(context, false);
-    return Future.value(false);
+    pageBloc.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: _onWillPop,
-      child: Scaffold(
-        body: DefaultTabController(
-            length: 2,
-            child: Scaffold(
-              body: Container(
-                  alignment: Alignment.center,
-                  width: double.infinity,
-                  height: double.infinity,
-                  child: SingleChildScrollView(
-                      child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      clubField(),
-                      Container(margin: EdgeInsets.only(top: 5.0, bottom: 5.0)),
-                      idField(),
-                      Container(margin: EdgeInsets.only(top: 5.0, bottom: 5.0)),
-                      nameField(),
-                      Container(margin: EdgeInsets.only(top: 5.0, bottom: 5.0)),
-                      titleField(),
-                      Container(margin: EdgeInsets.only(top: 5.0, bottom: 5.0)),
-                      contentField(),
-                      Container(margin: EdgeInsets.only(top: 5.0, bottom: 5.0)),
-                      clublimitField(),
-                      Container(margin: EdgeInsets.only(top: 5.0, bottom: 5.0)),
-                      numlimitField(),
-                      Container(margin: EdgeInsets.only(top: 5.0, bottom: 5.0)),
-                      statueField(),
-                      Container(margin: EdgeInsets.only(top: 5.0, bottom: 5.0)),
-                      plocaltion(),
-                      Container(margin: EdgeInsets.only(top: 5.0, bottom: 5.0)),
-                      pnote(),
-                      Container(margin: EdgeInsets.only(top: 5.0, bottom: 5.0)),
-                      // actstartField(),
-                      // Container(margin: EdgeInsets.only(top: 5.0, bottom: 5.0)),
-                      // actendField(),
-                      // Container(margin: EdgeInsets.only(top: 5.0, bottom: 5.0)),
-                      // singupField(),
-                      // Container(margin: EdgeInsets.only(top: 5.0, bottom: 5.0)),
-                      // singendField(),
-                      // Container(margin: EdgeInsets.only(top: 5.0, bottom: 5.0)),
-                      // statueField(),
-                      // Container(margin: EdgeInsets.only(top: 5.0, bottom: 5.0)),
-                      submitButton(),
-                    ],
-                  ))),
-            )),
+    return Scaffold(
+        resizeToAvoidBottomPadding: false,
+        body: SingleChildScrollView(
+          child: AnimationLimiter(
+            child: Column(
+              children: AnimationConfiguration.toStaggeredList(
+                  duration: const Duration(milliseconds: 375),
+                  childAnimationBuilder: (widget) => SlideAnimation(
+                        horizontalOffset: 50.0,
+                        child: FadeInAnimation(
+                          child: widget,
+                        ),
+                      ),
+                  children: [
+                    // _buildAppbar(),
+                    clubstreambuilder(),
+                    // actstreambuilder(),
+                  ]),
+            ),
+          ),
+        ));
+  }
+
+  Widget clubstreambuilder() {
+    return Container(
+        height: 200,
+        child: Column(
+          children: <Widget>[
+            Flexible(
+              child: StreamBuilder(
+                  stream: pageBloc.subscribeList(widget.account),
+                  builder: (BuildContext context,
+                      AsyncSnapshot<QuerySnapshot> snap) {
+                    if (snap.hasData) {
+                      List<DocumentSnapshot> docs = snap.data.documents;
+                      List<Club> clublist =
+                          pageBloc.mapClubInfo(docList: docs);
+                      if (docs.isNotEmpty) {
+                        return buildClubTAB(clublist);
+                      } else {
+                        return Text("data doesn't exist");
+                      }
+                    }
+                    return Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }),
+            ),
+          ],
+        ));
+  }
+
+      ListView buildClubTAB(List<Club> clublist) {
+    return ListView.separated(
+        separatorBuilder: (BuildContext context, int index) => Divider(),
+        itemCount: clublist.length,
+        itemBuilder: (context, index) {
+          // final id = goalsList[index].description;
+          final club = clublist[index]; //catch this active
+          return InkWell(
+            child: ListTile(
+              title: CircleAvatar(
+                    child:ClipOval(
+                      child: Image.network(club.pic),
+                    ),
+                    backgroundImage: NetworkImage(club.pic),
+                  ),
+              subtitle: Text('id : ' + club.id),
+              trailing: Text(
+                club.name,
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailSubscription(
+                    club: club,
+                  ),
+                ),
+              );
+            },
+          );
+        },
+        
+        
+        );
+  }
+
+  Widget actstreambuilder() {
+    return Container(
+        height: 200,
+        child: Column(
+          children: <Widget>[
+            SizedBox(
+              height: 20,
+            ),
+            Flexible(
+              child: StreamBuilder(
+                  stream: pageBloc.subscribeAct(),
+                  builder: (BuildContext context,
+                      AsyncSnapshot<QuerySnapshot> snap) {
+                    if (snap.hasData) {
+                      List<DocumentSnapshot> docs = snap.data.documents;
+                      List<Detail> clublist =
+                          pageBloc.detailToList(docList: docs);
+                      if (docs.isNotEmpty) {
+                        return buildActList(clublist);
+                      } else {
+                        return Text("data doesn't exist");
+                      }
+                    }
+                    return Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }),
+            ),
+          ],
+        ));
+  }
+
+  ListView buildActList(List<Detail> goalsList) {
+    return ListView.separated(
+        separatorBuilder: (BuildContext context, int index) => Divider(),
+        itemCount: goalsList.length,
+        itemBuilder: (context, index) {
+          // final id = goalsList[index].description;
+          final detail = goalsList[index]; //catch this active
+          return InkWell(
+            child: ListTile(
+              title: Text(
+                detail.title,///活動名稱
+                textAlign: TextAlign.left,
+                style: TextStyle(fontSize: 24.0,fontWeight: FontWeight.bold,),
+              ),
+              subtitle: Text('主辦單位 : '+detail.club),///社團名稱
+              trailing: Text(
+                detail.statue,///活動狀態
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 12.0,
+                ),
+              ),
+            ),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ActiveDetailPage(
+                    detail: detail,
+                  ),
+                ),
+              );
+            },
+          );
+        });
+  }
+
+  _buildAppbar() {
+    return Container(
+      height: 100,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: <Widget>[
+          _buildclub(),
+          _buildclub(),
+          _buildclub(),
+          _buildclub()
+        ],
       ),
     );
   }
 
-  Widget button() {
-    return StreamBuilder(
-      stream: _bloc.showProgress,
-      builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
-        if (!snapshot.hasData) {
-          return submitButton();
-        } else {
-          if (!snapshot.data) {
-            return submitButton();
-          } else {
-            return CircularProgressIndicator();
-          }
-        }
-      },
+  _buildclub() {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 8.0), //App bar間隔
+      child: Column(
+        children: <Widget>[
+          CircleAvatar(
+            radius: 30,
+            // backgroundImage: ExactAssetImage('assets/mypost.png'),
+          ),
+          Text("社團名稱"),
+        ],
+      ),
     );
   }
 
-  Widget submitButton() {
-    return RaisedButton(
-        textColor: Colors.white,
-        color: Colors.black,
-        child: Text("Submit"),
-        shape: RoundedRectangleBorder(
-            borderRadius: new BorderRadius.circular(30.0)),
-        onPressed: () {
-          _bloc.submit();
-        });
-  }
-
-
-  Widget pnote() {
-    return StreamBuilder(
-        stream: _bloc.pnote,
-        builder: (context, AsyncSnapshot<String> snapshot) {
-          return TextField(
-            onChanged: _bloc.changepnote,
-            obscureText: false,
-            decoration: InputDecoration(
-                contentPadding: EdgeInsets.all(10.0),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15.0),
+    _buildact() {
+    return Column(
+      children: <Widget>[
+        Row(
+          children: <Widget>[
+            Expanded(
+              child: Card(
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          '109年度資管DA',
+                          textAlign: TextAlign.end,
+                          style: TextStyle(fontSize: 24.0),
+                        ),
+                        Text('已報名'),
+                      ],
+                    ),
+                    Row(
+                      children: <Widget>[Text('主辦單位：資訊管理系（建工校區）')],
+                    ),
+                  ],
                 ),
-                hintText: '活動備註',
-                errorText: snapshot.error),
-          );
-        });
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
   }
 
-
-Widget plocaltion() {
-    return StreamBuilder(
-        stream: _bloc.plocaltion,
-        builder: (context, AsyncSnapshot<String> snapshot) {
-          return TextField(
-            onChanged: _bloc.changeplocaltion,
-            obscureText: false,
-            decoration: InputDecoration(
-                contentPadding: EdgeInsets.all(10.0),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                ),
-                hintText: '活動地點',
-                errorText: snapshot.error),
-          );
-        });
-  }
-
-
-  Widget idField() {
-    return StreamBuilder(
-        stream: _bloc.pid,
-        builder: (context, AsyncSnapshot<String> snapshot) {
-          return TextField(
-            onChanged: _bloc.changeid,
-            obscureText: false,
-            decoration: InputDecoration(
-                contentPadding: EdgeInsets.all(10.0),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                ),
-                hintText: '活動ID',
-                errorText: snapshot.error),
-          );
-        });
-  }
-
-  Widget nameField() {
-    return StreamBuilder(
-        stream: _bloc.pname,
-        builder: (context, AsyncSnapshot<String> snapshot) {
-          return TextField(
-            onChanged: _bloc.changepname,
-            obscureText: false,
-            decoration: InputDecoration(
-                contentPadding: EdgeInsets.all(10.0),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                ),
-                hintText: '活動名稱',
-                errorText: snapshot.error),
-          );
-        });
-  }
-
-  Widget clubField() {
-    return StreamBuilder(
-        stream: _bloc.clubid,
-        builder: (context, AsyncSnapshot<String> snapshot) {
-          return TextField(
-            onChanged: _bloc.changeclubid,
-            obscureText: false,
-            decoration: InputDecoration(
-                contentPadding: EdgeInsets.all(10.0),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                ),
-                hintText: '這個社團的id',
-                errorText: snapshot.error),
-          );
-        });
-  }
-
-  Widget titleField() {
-    return StreamBuilder(
-        stream: _bloc.ptitle,
-        builder: (context, AsyncSnapshot<String> snapshot) {
-          return TextField(
-            onChanged: _bloc.changeptitle,
-            obscureText: false,
-            decoration: InputDecoration(
-                contentPadding: EdgeInsets.all(10.0),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                ),
-                hintText: '大標',
-                errorText: snapshot.error),
-          );
-        });
-  }
-
-  Widget contentField() {
-    return StreamBuilder(
-        stream: _bloc.pcontent,
-        builder: (context, AsyncSnapshot<String> snapshot) {
-          return TextField(
-            onChanged: _bloc.changepcontent,
-            obscureText: false,
-            decoration: InputDecoration(
-                contentPadding: EdgeInsets.all(10.0),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                ),
-                hintText: '形容此活動',
-                errorText: snapshot.error),
-          );
-        });
-  }
-
-  Widget clublimitField() {
-    return StreamBuilder(
-        stream: _bloc.clublimit,
-        builder: (context, AsyncSnapshot<String> snapshot) {
-          return TextField(
-            onChanged: _bloc.changeclublimit,
-            obscureText: false,
-            decoration: InputDecoration(
-                contentPadding: EdgeInsets.all(10.0),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                ),
-                hintText: '限制那些社團',
-                errorText: snapshot.error),
-          );
-        });
-  }
-
-  Widget numlimitField() {
-    return StreamBuilder(
-        stream: _bloc.numlimit,
-        ///type(num)
-        builder: (context, AsyncSnapshot<String> snapshot) {
-          return TextField(
-            onChanged: _bloc.changenumlimit,
-            obscureText: false,
-            decoration: InputDecoration(
-                contentPadding: EdgeInsets.all(10.0),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                ),
-                hintText: '限制數量',
-                errorText: snapshot.error),
-          );
-        });
-  }
-
-  Widget statueField() {
-    return StreamBuilder(
-        stream: _bloc.statue,
-        builder: (context, AsyncSnapshot<String> snapshot) {
-          return TextField(
-            onChanged: _bloc.changeststue,
-            obscureText: false,
-            decoration: InputDecoration(
-                contentPadding: EdgeInsets.all(10.0),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                ),
-                hintText: '活動狀態',
-                errorText: snapshot.error),
-          );
-        });
-  }
 }
 
 
-
-//   Widget actstartField() {
-//     return StreamBuilder(
-//         stream: _bloc.actstart,
-//         builder: (context, AsyncSnapshot<Timestamp> snapshot) {
-//           return TextField(
-//             onChanged: _bloc.changeid,
-//             obscureText: false,
-//             decoration: InputDecoration(
-//                 contentPadding: EdgeInsets.all(10.0),
-//                 border: OutlineInputBorder(
-//                   borderRadius: BorderRadius.circular(15.0),
-//                 ),
-//                 hintText: 'enter something',
-//                 errorText: snapshot.error),
-//           );
-//         });
-//   }
-
-//   Widget actendField() {
-//     return StreamBuilder(
-//         stream: _bloc.pid,
-//         builder: (context, AsyncSnapshot<String> snapshot) {
-//           return TextField(
-//             onChanged: _bloc.changeid,
-//             obscureText: false,
-//             decoration: InputDecoration(
-//                 contentPadding: EdgeInsets.all(10.0),
-//                 border: OutlineInputBorder(
-//                   borderRadius: BorderRadius.circular(15.0),
-//                 ),
-//                 hintText: 'enter something',
-//                 errorText: snapshot.error),
-//           );
-//         });
-//   }
-
-//   Widget singupField() {
-//     return StreamBuilder(
-//         stream: _bloc.pid,
-//         builder: (context, AsyncSnapshot<String> snapshot) {
-//           return TextField(
-//             onChanged: _bloc.changeid,
-//             obscureText: false,
-//             decoration: InputDecoration(
-//                 contentPadding: EdgeInsets.all(10.0),
-//                 border: OutlineInputBorder(
-//                   borderRadius: BorderRadius.circular(15.0),
-//                 ),
-//                 hintText: 'enter something',
-//                 errorText: snapshot.error),
-//           );
-//         });
-//   }
-
-//   Widget singendField() {
-//     return StreamBuilder(
-//         stream: _bloc.pid,
-//         builder: (context, AsyncSnapshot<String> snapshot) {
-//           return TextField(
-//             onChanged: _bloc.changeid,
-//             obscureText: false,
-//             decoration: InputDecoration(
-//                 contentPadding: EdgeInsets.all(10.0),
-//                 border: OutlineInputBorder(
-//                   borderRadius: BorderRadius.circular(15.0),
-//                 ),
-//                 hintText: 'enter something',
-//                 errorText: snapshot.error),
-//           );
-//         });
-//   }
-// }
