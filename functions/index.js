@@ -2,9 +2,9 @@ const functions = require('firebase-functions');
 const algoliasearch = require('algoliasearch');
 const admin = require('firebase-admin');
 
-const ALGOLIA_APP_ID = 'SJAWWWHOCC';
-const ALGOLIA_ADMIN_ID = '971e80b22c705e7250f358761a0599ca';
-const ALGOLIA_INDEX_NAME = 'wadon_dev';
+const ALGOLIA_APP_ID = '';
+const ALGOLIA_ADMIN_ID = '';
+const ALGOLIA_INDEX_NAME = '';
 
 admin.initializeApp(functions.config().firebase);
 
