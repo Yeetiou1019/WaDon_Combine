@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../ui/page/page.dart';
 import '../home/drawer.dart';
+import '../ui/page/dashboard/SearchField.dart';
 
 class HomePage extends StatefulWidget {
   final String account;
@@ -26,8 +27,11 @@ class _HomePageState extends State<HomePage> {
     ActivityPage(
       key: PageStorageKey('ActivityPage'),
     ),
-    NotificationPage(
-      key: PageStorageKey('NotificationPage'),
+    // NotificationPage(
+    //   key: PageStorageKey('NotificationPage'),
+    // ),
+    SearchField(
+      key: PageStorageKey('SearchField'),
     ),
     ProfilePage(
       key: PageStorageKey('ProfilePage'),

@@ -20,7 +20,23 @@ class SlideDrawer extends StatelessWidget {
             children: <Widget>[
             UserAccountsDrawerHeader(
               accountEmail: Text(account), 
-              accountName: Text('陳三斤'),
+              accountName: FutureBuilder<String>(
+                future: getUserName(account),  
+                builder: (context,snapshot){
+                  switch (snapshot.connectionState) {
+                        case ConnectionState.none:
+                        case ConnectionState.active:
+                        case ConnectionState.waiting:
+                        case ConnectionState.done:
+                          if (snapshot.data == null || snapshot.data == ''){
+                            return Text('快去個人頁面設定名字！');
+                            }else {
+                            return Text(snapshot.data);
+                          }
+                      }
+                  return null;
+                },
+              ),
               currentAccountPicture:FutureBuilder<String>(
                   future: getProfilePictureUrl(account),
                     builder: (context, snapshot) {
@@ -31,32 +47,34 @@ class SlideDrawer extends StatelessWidget {
                           return Center(child: CircularProgressIndicator());
                           break;
                         case ConnectionState.done:
-                          if (snapshot.data.isEmpty)
+                          if (snapshot.data == null || snapshot.data == ''){
                             return CircleAvatar(
                               backgroundImage: AssetImage('assets/dog_akitainu.png'),
                             );
-                          return CircleAvatar(
+                            }else {
+                            return CircleAvatar(
                             backgroundImage: NetworkImage(snapshot.data),
-                          );
+                           );
+                          }
                       }
                       return null;
                     },
                   ),
             ),
-            // ListTile(
-            //   leading: Icon(Icons.file_upload),
-            //   title: Text('Profile picture'),
-            //   onTap: () async {
-            //     File image =
-            //         await ImagePicker.pickImage(source: ImageSource.gallery);
-            //     if (image != null) {
-            //       var uploadTask = uploadImage(image, account);
-            //       await uploadTask.onComplete;
-            //       String url = await uploadTask.lastSnapshot.ref.getDownloadURL();
-            //       updateProfilePictureUrl(account, url);
-            //     }
-            //   },
-            // ),
+            ListTile(
+              leading: Icon(Icons.file_upload),
+              title: Text('Profile picture'),
+              onTap: () async {
+                File image =
+                    await ImagePicker.pickImage(source: ImageSource.gallery);
+                if (image != null) {
+                  var uploadTask = uploadImage(image, account);
+                  await uploadTask.onComplete;
+                  String url = await uploadTask.lastSnapshot.ref.getDownloadURL();
+                  updateProfilePictureUrl(account, url);
+                }
+              },
+            ),
             ExpansionTile(  //可展開列表
               title: Text('已訂閱社團'),
               children: <Widget>[ //子列表
