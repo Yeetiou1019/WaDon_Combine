@@ -8,6 +8,7 @@ import 'package:wadone_main/ui/page/activity/activeDetailPage.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:wadone_main/ui/page/activity/ActivityPage.dart';
+import '../dashboard/SearchField.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({Key key}) : super(key:key);
@@ -47,7 +48,6 @@ class _DashboardState extends State<DashboardPage> {
                         ),
                       ),
                   children: [
-                    buildTextfield(),
                     buttonGroup(),
                     buildCarousel(),
                     body()
@@ -154,20 +154,18 @@ class _DashboardState extends State<DashboardPage> {
   }
 }
 
-Widget buildTextfield() {
-  return TextField(
-    maxLines: 1,
-    decoration: new InputDecoration(
-        hoverColor: Color.fromARGB(255, 50, 50, 200),
-        icon: Icon(
-          Icons.search,
-        ),
-        hintText: ("搜尋"),
-        border: InputBorder.none),
-  );
-}
-
-
+// Widget buildTextfield() {
+//   return TextField(
+//     maxLines: 1,
+//     decoration: new InputDecoration(
+//         hoverColor: Color.fromARGB(255, 50, 50, 200),
+//         icon: Icon(
+//           Icons.search,
+//         ),
+//         hintText: ("搜尋"),
+//         border: InputBorder.none),
+//   );
+// }
 
 Widget buttonGroup() {
   return Row(

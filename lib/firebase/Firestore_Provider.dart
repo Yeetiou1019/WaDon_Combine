@@ -7,7 +7,7 @@ class FirestoreProvider {
   Stream<QuerySnapshot> pageList() {
     return _firestore
         .collection("posts")
-        .document('nkust_IC')///find out something can fetch all club
+        .document('NKUST_CMC')///find out something can fetch all club
         .collection('club_post')
         .snapshots();
   }
