@@ -9,8 +9,8 @@ import 'package:wadone_main/ui/manager/create.dart';
 
 
 class Manager extends StatefulWidget {
-
-  Manager({Key key}) : super(key: key);
+  final String account;
+  Manager({Key key,this.account }) : super(key: key);
   @override
   _ManagerState createState() => _ManagerState();
 }
@@ -113,11 +113,9 @@ class _ManagerState extends State<Manager> {
                     onPressed: () {
                       ///only act owner can do this method
                       /// so give this method an club's id
-                      String clubid = 'nkust_IC';
-
+                      String clubid = 'NKUST_IC';
                       ///fortemp this will catch that club's id(after singing)
                       _bloc.delete(clubid,detail.actid);
-
                       ///add to personal list
                     },
                   );

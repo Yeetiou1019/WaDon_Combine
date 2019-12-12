@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 class User extends StatefulWidget {
+  final String account;
+  const User({Key key,this.account}) : super(key:key);
   @override
   _UserPageState createState() => _UserPageState();
 }

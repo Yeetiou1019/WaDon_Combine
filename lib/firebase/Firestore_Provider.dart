@@ -7,7 +7,7 @@ class FirestoreProvider {
   Stream<QuerySnapshot> pageList() {
     return _firestore
         .collection("posts")
-        .document('NKUST_CMC')///find out something can fetch all club
+        .document('NKUST_IC')///find out something can fetch all club
         .collection('club_post')
         .snapshots();
   }
@@ -20,6 +20,15 @@ class FirestoreProvider {
      .collection('club_post')
      .where('p_id',isEqualTo: actid )
      .snapshots();
+  }
+
+  Stream<QuerySnapshot> subscribeList(String account){
+    return _firestore
+    .collection('subscribe')
+    .document(account)
+    .collection('subscribe_club')
+    .snapshots();
+
   }
   
   Future<void> clubadd(String actid,String clubid){
@@ -121,6 +130,31 @@ Future<void> uploadAct(String clubid,String name,String title,String content,Str
       'p_localtion':plocaltion,
       'p_note':pnote,
     });
+  }
+
+ Stream<DocumentSnapshot> getUserData(String account) {
+   return _firestore
+   .collection('users')
+   .document(account)
+   .snapshots();
+ }
+
+ Stream<QuerySnapshot> clubpost(String clubid) {
+   return _firestore
+   .collection('posts')
+   .document(clubid)
+   .collection('club_post')
+   .snapshots();
+ }
+
+  Stream<QuerySnapshot>  userJoinList(String account) {
+    return  _firestore
+    .collection('users')
+    .document(account)
+    .collection('actlist')
+    .snapshots();
+
+    
   }
   
 
