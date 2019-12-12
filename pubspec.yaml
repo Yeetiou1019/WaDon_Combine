@@ -47,15 +47,8 @@ dependencies:
   shared_preferences: ^0.5.4+5
   timeago: ^2.0.22
   image_picker: ^0.6.2
-<<<<<<< HEAD
-  awesome_dialog: ^0.1.0
-  curved_navigation_bar: ^0.3.1
-  algolia: ^0.1.7
-
-=======
   
   
->>>>>>> 4762d28a1a5040cdda79218074ba1033da4a3a7c
 dev_dependencies:
   flutter_test:
     sdk: flutter
