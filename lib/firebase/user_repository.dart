@@ -39,11 +39,11 @@ class UserRepository {
     );
   }
   
-  Future<void> addUserToFirestore(String email, String password) async {
+  Future<void> addUserToFirestore(String email,String password,String cId,String gender,String tel,String name,String student) async {
     return _firestore
         .collection("users")
         .document(email)
-        .setData({'email': email, 'password': password, 'goalAdded': false});
+        .setData({'email': email, 'club': cId,'gender':gender,'tel':tel,'name':name,'student':student,});
   }
 
 

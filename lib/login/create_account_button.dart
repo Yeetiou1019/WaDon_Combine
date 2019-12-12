@@ -13,8 +13,15 @@ class CreateAccountButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlatButton(
+      color: Colors.blueGrey.shade500,
+      textColor: Colors.white,
+      focusColor: Colors.blueGrey,
+      hoverColor: Colors.blueGrey,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(30.0),
+      ),
       child: Text(
-          'Create a Account'
+          '建立帳號'
       ),
       onPressed: (){
         Navigator.of(context).push(

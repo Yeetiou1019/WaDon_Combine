@@ -3264,15 +3264,16 @@ public final class R {
     public static final int common_signin_button_text_long=0x7f0c002c;
     public static final int default_notification_channel_id=0x7f0c002d;
     public static final int default_web_client_id=0x7f0c002e;
-    public static final int firebase_database_url=0x7f0c002f;
-    public static final int gcm_defaultSenderId=0x7f0c0030;
-    public static final int google_api_key=0x7f0c0031;
-    public static final int google_app_id=0x7f0c0032;
-    public static final int google_crash_reporting_api_key=0x7f0c0033;
-    public static final int google_storage_bucket=0x7f0c0034;
-    public static final int project_id=0x7f0c0035;
-    public static final int search_menu_title=0x7f0c0036;
-    public static final int status_bar_notification_info_overflow=0x7f0c0037;
+    public static final int fcm_fallback_notification_channel_label=0x7f0c002f;
+    public static final int firebase_database_url=0x7f0c0030;
+    public static final int gcm_defaultSenderId=0x7f0c0031;
+    public static final int google_api_key=0x7f0c0032;
+    public static final int google_app_id=0x7f0c0033;
+    public static final int google_crash_reporting_api_key=0x7f0c0034;
+    public static final int google_storage_bucket=0x7f0c0035;
+    public static final int project_id=0x7f0c0036;
+    public static final int search_menu_title=0x7f0c0037;
+    public static final int status_bar_notification_info_overflow=0x7f0c0038;
   }
   public static final class style {
     public static final int AlertDialog_AppCompat=0x7f0d0000;
