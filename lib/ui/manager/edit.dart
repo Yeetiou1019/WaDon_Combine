@@ -56,6 +56,7 @@ class _EditState extends State<Edit> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Container(margin: EdgeInsets.only(top: 5.0, bottom: 5.0)),
+              Container(margin: EdgeInsets.only(top: 5.0, bottom: 5.0)),
               // clubField(),
               // Container(margin: EdgeInsets.only(top: 5.0, bottom: 5.0)),
               // idField(),
@@ -70,8 +71,8 @@ class _EditState extends State<Edit> {
               Container(margin: EdgeInsets.only(top: 5.0, bottom: 5.0)),
               numlimitField(),
               Container(margin: EdgeInsets.only(top: 5.0, bottom: 5.0)),
-              // statueField(),
-              // Container(margin: EdgeInsets.only(top: 5.0, bottom: 5.0)),
+              statueField(),
+              Container(margin: EdgeInsets.only(top: 5.0, bottom: 5.0)),
               plocaltion(),
               Container(margin: EdgeInsets.only(top: 5.0, bottom: 5.0)),
               pnote(),
@@ -102,6 +103,7 @@ class _EditState extends State<Edit> {
           Navigator.pop(context) ;
         });
   }
+
 
   Widget pnote() {
     return StreamBuilder(
@@ -185,6 +187,7 @@ class _EditState extends State<Edit> {
         stream: _bloc.pcontent,
         builder: (context, AsyncSnapshot<String> snapshot) {
           return TextField(
+            maxLines: null,
             onChanged: _bloc.changepcontent,
             obscureText: false,
             decoration: InputDecoration(
@@ -217,6 +220,27 @@ class _EditState extends State<Edit> {
           );
         });
   }
+
+  Widget statueField() {
+    return StreamBuilder(
+        stream: _bloc.statue,
+        builder: (context, AsyncSnapshot<String> snapshot) {
+          return TextField(
+            onChanged: _bloc.changeststue,
+            obscureText: false,
+            decoration: InputDecoration(
+                contentPadding: EdgeInsets.all(10.0),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                labelText: '限制那些社團',
+                hintText:"先前輸入 :"+widget.detail.clublimit,
+                errorText: snapshot.error),
+          );
+        });
+  }
+
+
 
 
 

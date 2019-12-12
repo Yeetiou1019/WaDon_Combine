@@ -132,13 +132,13 @@ class _ActiveDetailPageState extends State<ActiveDetailPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          '活動時間：108年12月25號 (修但幾勒)',
+                          '活動時間：108年12月25號',
 
                           ///暫時沒辦法
                           style: TextStyle(fontSize: 18.0),
                         ),
                         Text(
-                          '活動時間：17：30~21：00 (金罵謀銀)',
+                          '活動時間：17：30~21：00',
 
                           ///暫時沒辦法
                           style: TextStyle(fontSize: 18.0),

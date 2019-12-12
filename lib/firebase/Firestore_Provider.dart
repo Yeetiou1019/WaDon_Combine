@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 
 class FirestoreProvider {
   Firestore _firestore = Firestore.instance;
-
   ///home page stream
   Stream<QuerySnapshot> pageList() {
     return _firestore
@@ -12,7 +12,7 @@ class FirestoreProvider {
         .snapshots();
   }
 
-  ///that club's all active
+  ///that club's active
   Stream<QuerySnapshot> actList(String clubid,String actid){
      return _firestore
      .collection("posts")

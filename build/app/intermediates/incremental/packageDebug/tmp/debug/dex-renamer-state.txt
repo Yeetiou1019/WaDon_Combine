@@ -1,20 +1,10 @@
-<<<<<<< HEAD
-#Thu Dec 12 16:07:47 CST 2019
-=======
-#Thu Dec 12 16:53:51 CST 2019
->>>>>>> 4762d28a1a5040cdda79218074ba1033da4a3a7c
+#Thu Dec 12 22:41:53 CST 2019
 path.2=classes3.dex
 path.1=classes2.dex
 path.0=classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
-<<<<<<< HEAD
 base.2=C\:\\Users\\oaoxd\\OneDrive\\Desktop\\Wadon_Combine_Git\\WaDon_Combine\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
 base.1=C\:\\Users\\oaoxd\\OneDrive\\Desktop\\Wadon_Combine_Git\\WaDon_Combine\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
 base.0=C\:\\Users\\oaoxd\\OneDrive\\Desktop\\Wadon_Combine_Git\\WaDon_Combine\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
-=======
-base.2=/Users/yee/Desktop/WaDon_Combine/build/app/intermediates/transforms/dexMerger/debug/0
-base.1=/Users/yee/Desktop/WaDon_Combine/build/app/intermediates/transforms/dexMerger/debug/0
-base.0=/Users/yee/Desktop/WaDon_Combine/build/app/intermediates/transforms/dexMerger/debug/0
->>>>>>> 4762d28a1a5040cdda79218074ba1033da4a3a7c

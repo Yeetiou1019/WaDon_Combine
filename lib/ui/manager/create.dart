@@ -242,6 +242,7 @@ Widget plocaltion() {
         stream: _bloc.pcontent,
         builder: (context, AsyncSnapshot<String> snapshot) {
           return TextField(
+            maxLines: null,
             onChanged: _bloc.changepcontent,
             obscureText: false,
             decoration: InputDecoration(
