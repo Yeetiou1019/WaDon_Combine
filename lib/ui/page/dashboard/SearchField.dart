@@ -98,13 +98,6 @@ class _SearchFieldState extends State<SearchField> {
                                     }
                                   }
                                   return ListTile(
-                                    leading: CircleAvatar(
-                                      child:ClipOval(
-                                        child: Image.network(
-                                          imageUrl),
-                                        ),
-                                      backgroundImage: NetworkImage(imageUrl),
-                                    ),
                                     title: Text(snap.data["p_title"]),
                                     subtitle:
                                       Column(

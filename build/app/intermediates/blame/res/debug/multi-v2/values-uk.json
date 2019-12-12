@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\oaoxd\\OneDrive\\Desktop\\WaDon_Combine-master\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uk\\values-uk.xml",
+            "outputFile": "C:\\Users\\oaoxd\\OneDrive\\Desktop\\Wadon_Combine_Git\\WaDon_Combine\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uk\\values-uk.xml",
             "map": [
                 {
                     "source": "C:\\Users\\oaoxd\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-17.1.0.aar\\ac0f1c649730cbdcf2b8e40cac2285e0\\res\\values-uk\\values.xml",

@@ -146,6 +146,16 @@ Future<void> uploadAct(String clubid,String name,String title,String content,Str
    .collection('club_post')
    .snapshots();
  }
+
+  Stream<QuerySnapshot>  userJoinList(String account) {
+    return  _firestore
+    .collection('users')
+    .document(account)
+    .collection('actlist')
+    .snapshots();
+
+    
+  }
   
 
 

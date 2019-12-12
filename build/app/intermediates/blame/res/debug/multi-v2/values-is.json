@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\oaoxd\\OneDrive\\Desktop\\WaDon_Combine-master\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-is\\values-is.xml",
+            "outputFile": "C:\\Users\\oaoxd\\OneDrive\\Desktop\\Wadon_Combine_Git\\WaDon_Combine\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-is\\values-is.xml",
             "map": [
                 {
                     "source": "C:\\Users\\oaoxd\\.gradle\\caches\\transforms-1\\files-1.1\\jetified-play-services-basement-17.0.0.aar\\90b16358f28e1b28397a5a81b8542f9b\\res\\values-is\\values.xml",

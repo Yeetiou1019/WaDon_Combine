@@ -60,7 +60,7 @@ class _DashboardState extends State<DashboardPage> {
 
   Widget body() {
     return Container(
-        height: 200,
+        height: 800,
         child: Column(
           children: <Widget>[
             SizedBox(
@@ -128,6 +128,7 @@ class _DashboardState extends State<DashboardPage> {
                 MaterialPageRoute(
                   builder: (context) => ActiveDetailPage(
                     detail: detail,
+                    account: widget.account,
                   ),
                 ),
               );

@@ -9,7 +9,8 @@ import 'package:wadone_main/ui/page/activity/activeDetailPage.dart';
 
 class DetailSubscription extends StatefulWidget {
   Club club;
-  DetailSubscription({Key key, @required this.club}) : super(key: key);
+  String account;
+  DetailSubscription({Key key, @required this.club,this.account}) : super(key: key);
   @override
   _DetailSubscriptionState createState() => _DetailSubscriptionState();
 }
@@ -95,6 +96,7 @@ class _DetailSubscriptionState extends State<DetailSubscription> {
                 MaterialPageRoute(
                   builder: (context) => ActiveDetailPage(
                     detail: detail,
+                    account: widget.account,
                   ),
                 ),
               );

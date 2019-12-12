@@ -8,10 +8,11 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:awesome_dialog/animated_button.dart';
 
-
 class ActiveDetailPage extends StatefulWidget {
   final Detail detail;
-  ActiveDetailPage({Key key, @required this.detail}) : super(key: key);
+  final String account;
+  ActiveDetailPage({Key key, @required this.detail, this.account})
+      : super(key: key);
 
   @override
   _ActiveDetailPageState createState() => _ActiveDetailPageState();
@@ -55,47 +56,49 @@ class _ActiveDetailPageState extends State<ActiveDetailPage> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold( 
-    body: _body1(),
-    bottomNavigationBar:_raisedButton(),
+    return new Scaffold(
+      body: _body1(),
+      bottomNavigationBar: _raisedButton(),
     );
   }
 
   Widget _body() {
-    return 
-     Container(
-      height: 400,
+    return Container(
+      height: MediaQuery.of(context).size.height,
       child: StreamBuilder(
-        stream: _bloc.allact(),
-        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snap) {
-          if (snap.hasData) {
-            List<DocumentSnapshot> docs = snap.data.documents;
-            List<Detail> detailsList = _bloc.detailToList(docList: docs);
-            if (detailsList.isNotEmpty) {
-              return Column(
-                children: AnimationConfiguration.toStaggeredList(
-                    duration: const Duration(milliseconds: 375),
-                    childAnimationBuilder: (widget) => SlideAnimation(
-                          horizontalOffset: 50.0,
-                          child: FadeInAnimation(
-                            child: widget,
+          stream: _bloc.allact(),
+          builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snap) {
+            if (snap.hasData) {
+              List<DocumentSnapshot> docs = snap.data.documents;
+              List<Detail> detailsList = _bloc.detailToList(docList: docs);
+              if (detailsList.isNotEmpty) {
+                return Column(
+                  children: AnimationConfiguration.toStaggeredList(
+                      duration: const Duration(milliseconds: 375),
+                      childAnimationBuilder: (widget) => SlideAnimation(
+                            horizontalOffset: 50.0,
+                            child: FadeInAnimation(
+                              child: widget,
+                            ),
                           ),
-                        ),
-                    children: [_content(detailsList)]),
-              );
-            } else {
-              return Text("data doesn't exist");
+                      children: [_content(detailsList)]),
+                );
+              } else {
+                return Text("data doesn't exist");
+              }
             }
-          }
-        }),
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }),
     );
-    
   }
 
   Widget _content(List<Detail> detailsList) {
     return ListView.separated(
         scrollDirection: Axis.vertical,
         shrinkWrap: true,
+
         ///如果有設定高度 而且是像listview這種會產生很多個的 記得在 子widget 下面用以上這兩個 會自動 match 父widget 的大小 error:Vertical viewport was given unbounded height.
         separatorBuilder: (BuildContext context, int index) => Divider(),
         itemCount: detailsList.length,
@@ -110,6 +113,7 @@ class _ActiveDetailPageState extends State<ActiveDetailPage> {
                 children: <Widget>[
                   Text(
                     detailsList[index].pname,
+
                     ///活動名稱
                     textAlign: TextAlign.end,
                     style: TextStyle(
@@ -149,18 +153,14 @@ class _ActiveDetailPageState extends State<ActiveDetailPage> {
                         ),
                         Text(
                           '活動内容：' + detailsList[index].description,
-
                           style: TextStyle(fontSize: 18.0),
                         ),
-
                         Container(
-                        child: Image.asset('assets/dog_akitainu.png'),
+                          child: Image.asset('assets/dog_akitainu.png'),
                         ),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.end,
-                          children: <Widget>[
-                          
-                          ],
+                          children: <Widget>[],
                         ),
                         SizedBox(
                           height: 25,
@@ -178,16 +178,16 @@ class _ActiveDetailPageState extends State<ActiveDetailPage> {
   Widget _raisedButton() {
     if (0 == 0) {
       ///判斷有無報名過
-      String uId = '1105137242@test.com';
       return RaisedButton(
         color: Colors.cyan[800],
         textColor: Colors.white,
         onPressed: () {
           _dialog();
+
           ///user add act to actlist
           Firestore.instance
               .collection('users')
-              .document(uId)
+              .document(widget.account)
               .collection('actlist')
               .document(widget.detail.actid)
               .setData({
@@ -202,9 +202,11 @@ class _ActiveDetailPageState extends State<ActiveDetailPage> {
               .collection('club_post')
               .document(widget.detail.actid)
               .collection('userlist')
-              .document(uId)
-              .setData(
-                  {'u_id': uId, 'time': Timestamp.fromDate(DateTime.now())});
+              .document(widget.account)
+              .setData({
+            'u_id': widget.account,
+            'time': Timestamp.fromDate(DateTime.now())
+          });
         },
         child: Text('報名'),
       );
@@ -213,12 +215,12 @@ class _ActiveDetailPageState extends State<ActiveDetailPage> {
         color: Colors.cyan[800],
         textColor: Colors.white,
         onPressed: () {},
+
         ///FUTTER TOAST 提示 '親 您已經報名過了喔 揪咪><' 之類的
         child: Text('已報名'),
       );
     }
   }
-
 
   Widget _body1() {
     return CustomScrollView(
@@ -235,7 +237,10 @@ class _ActiveDetailPageState extends State<ActiveDetailPage> {
           snap: true,
           expandedHeight: 500, //必须设定,否则无法显示
           flexibleSpace: FlexibleSpaceBar(
-            title: Text("This is Sliver App Bar",style: TextStyle(color:Colors.white,fontSize: 18.0),),
+            title: Text(
+              widget.detail.title,
+              style: TextStyle(color: Colors.white, fontSize: 18.0),
+            ),
             background: Image.asset(
               "assets/dog_akitainu.png",
               fit: BoxFit.fitWidth,
@@ -253,66 +258,67 @@ class _ActiveDetailPageState extends State<ActiveDetailPage> {
     );
   }
 
-_subbutton(){
-  return RaisedButton(
-                      color: Colors.blueGrey,
-                      textColor: Colors.white,
-                      onPressed: () {},
-                      /// add this actid to suscript list
-                      child: Row(
-                        children: <Widget>[
-                          Text('訂閲'),
-                          Icon(Icons.add_circle_outline),
-                        ],
-                      ));
-}
+  _subbutton() {
+    return RaisedButton(
+        color: Colors.blueGrey,
+        textColor: Colors.white,
+        onPressed: () {},
 
-_dialog(){
- return AwesomeDialog(
-            context: context,
-            animType: AnimType.SCALE,
-            dialogType: DialogType.INFO,
-            body: Center(child: Text(
-                    '您是否要報名?',
-                    style: TextStyle(fontStyle: FontStyle.italic),
-                  ),),
-            tittle: 'This is Ignored',
-            desc:   'This is also Ignored',
-            btnOk: _buildFancyButtonOk(),
-            btnCancel: _buildFancyButtonCancel(),
-            btnOkOnPress: () {
-            
-            },
-                 ).show();
-}
+        /// add this actid to suscript list
+        child: Row(
+          children: <Widget>[
+            Text('訂閲'),
+            Icon(Icons.add_circle_outline),
+          ],
+        ));
+  }
 
+  _dialog() {
+    return AwesomeDialog(
+      context: context,
+      animType: AnimType.SCALE,
+      dialogType: DialogType.INFO,
+      body: Center(
+        child: Text(
+          '您是否要報名?',
+          style: TextStyle(fontStyle: FontStyle.italic),
+        ),
+      ),
+      tittle: 'This is Ignored',
+      desc: 'This is also Ignored',
+      btnOk: _buildFancyButtonOk(),
+      btnCancel: _buildFancyButtonCancel(),
+      btnOkOnPress: () {},
+    ).show();
+  }
 
   _buildFancyButtonOk() {
     return AnimatedButton(
       pressEvent: () {
         Navigator.of(context).pop();
         btnOkOnPress();
-              },
-              text: btnOkText ?? '確定',
-              color: btnOkColor ?? Color(0xFF00CA71),
-              icon: btnOkIcon,
-            );
-          }
-        
-          _buildFancyButtonCancel() {
-            return AnimatedButton(
-              pressEvent: () {
-                Navigator.of(context).pop();
-                btnCancelOnPress();
-                              },
-                              text: btnCancelText ?? '取消',
-                              color: btnCancelColor ?? Colors.red,
-                              icon: btnCancelIcon,
-                            );
-                          }
-                          void matchId() {}
-                        
-                          void btnOkOnPress() {}
-                
-                  void btnCancelOnPress() {}
+      },
+      text: btnOkText ?? '確定',
+      color: btnOkColor ?? Color(0xFF00CA71),
+      icon: btnOkIcon,
+    );
+  }
+
+  _buildFancyButtonCancel() {
+    return AnimatedButton(
+      pressEvent: () {
+        Navigator.of(context).pop();
+        btnCancelOnPress();
+      },
+      text: btnCancelText ?? '取消',
+      color: btnCancelColor ?? Colors.red,
+      icon: btnCancelIcon,
+    );
+  }
+
+  void matchId() {}
+
+  void btnOkOnPress() {}
+
+  void btnCancelOnPress() {}
 }

@@ -106,4 +106,6 @@ class Repository {
   Stream<QuerySnapshot> subscribeList(String account) =>_firestoreProvider.subscribeList(account);
 
   Stream<QuerySnapshot> clubpost(String clubid) => _firestoreProvider.clubpost(clubid);
+
+  Stream<QuerySnapshot> userJoinList(String account) => _firestoreProvider.userJoinList(account);
 }

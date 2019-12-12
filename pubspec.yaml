@@ -47,6 +47,7 @@ dependencies:
   image_picker: ^0.6.2
   awesome_dialog: ^0.1.0
   curved_navigation_bar: ^0.3.1
+  algolia: ^0.1.7
 
 dev_dependencies:
   flutter_test:

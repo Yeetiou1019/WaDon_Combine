@@ -52,6 +52,7 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
                         ),
                       ),
                   children: [
+                    SizedBox(height: 20,),
                     // _buildAppbar(),
                     clubstreambuilder(),
                     // actstreambuilder(),
@@ -121,6 +122,7 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
                 MaterialPageRoute(
                   builder: (context) => DetailSubscription(
                     club: club,
+                    account:widget.account
                   ),
                 ),
               );
@@ -131,139 +133,139 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
         
         );
   }
+///未使用功能
+  // Widget actstreambuilder() {
+  //   return Container(
+  //       height: 200,
+  //       child: Column(
+  //         children: <Widget>[
+  //           SizedBox(
+  //             height: 20,
+  //           ),
+  //           Flexible(
+  //             child: StreamBuilder(
+  //                 stream: pageBloc.subscribeAct(),
+  //                 builder: (BuildContext context,
+  //                     AsyncSnapshot<QuerySnapshot> snap) {
+  //                   if (snap.hasData) {
+  //                     List<DocumentSnapshot> docs = snap.data.documents;
+  //                     List<Detail> clublist =
+  //                         pageBloc.detailToList(docList: docs);
+  //                     if (docs.isNotEmpty) {
+  //                       return buildActList(clublist);
+  //                     } else {
+  //                       return Text("data doesn't exist");
+  //                     }
+  //                   }
+  //                   return Center(
+  //                     child: CircularProgressIndicator(),
+  //                   );
+  //                 }),
+  //           ),
+  //         ],
+  //       ));
+  // }
 
-  Widget actstreambuilder() {
-    return Container(
-        height: 200,
-        child: Column(
-          children: <Widget>[
-            SizedBox(
-              height: 20,
-            ),
-            Flexible(
-              child: StreamBuilder(
-                  stream: pageBloc.subscribeAct(),
-                  builder: (BuildContext context,
-                      AsyncSnapshot<QuerySnapshot> snap) {
-                    if (snap.hasData) {
-                      List<DocumentSnapshot> docs = snap.data.documents;
-                      List<Detail> clublist =
-                          pageBloc.detailToList(docList: docs);
-                      if (docs.isNotEmpty) {
-                        return buildActList(clublist);
-                      } else {
-                        return Text("data doesn't exist");
-                      }
-                    }
-                    return Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }),
-            ),
-          ],
-        ));
-  }
+  // ListView buildActList(List<Detail> goalsList) {
+  //   return ListView.separated(
+  //       separatorBuilder: (BuildContext context, int index) => Divider(),
+  //       itemCount: goalsList.length,
+  //       itemBuilder: (context, index) {
+  //         // final id = goalsList[index].description;
+  //         final detail = goalsList[index]; //catch this active
+  //         return InkWell(
+  //           child: ListTile(
+  //             title: Text(
+  //               detail.title,///活動名稱
+  //               textAlign: TextAlign.left,
+  //               style: TextStyle(fontSize: 24.0,fontWeight: FontWeight.bold,),
+  //             ),
+  //             subtitle: Text('主辦單位 : '+detail.club),///社團名稱
+  //             trailing: Text(
+  //               detail.statue,///活動狀態
+  //               style: TextStyle(
+  //                 fontWeight: FontWeight.bold,
+  //                 fontSize: 12.0,
+  //               ),
+  //             ),
+  //           ),
+  //           onTap: () {
+  //             Navigator.push(
+  //               context,
+  //               MaterialPageRoute(
+  //                 builder: (context) => ActiveDetailPage(
+  //                   detail: detail,
+  //                 ),
+  //               ),
+  //             );
+  //           },
+  //         );
+  //       });
+  // }
+///預定樣式
+  // _buildAppbar() {
+  //   return Container(
+  //     height: 100,
+  //     child: Row(
+  //       mainAxisAlignment: MainAxisAlignment.spaceAround,
+  //       children: <Widget>[
+  //         _buildclub(),
+  //         _buildclub(),
+  //         _buildclub(),
+  //         _buildclub()
+  //       ],
+  //     ),
+  //   );
+  // }
 
-  ListView buildActList(List<Detail> goalsList) {
-    return ListView.separated(
-        separatorBuilder: (BuildContext context, int index) => Divider(),
-        itemCount: goalsList.length,
-        itemBuilder: (context, index) {
-          // final id = goalsList[index].description;
-          final detail = goalsList[index]; //catch this active
-          return InkWell(
-            child: ListTile(
-              title: Text(
-                detail.title,///活動名稱
-                textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 24.0,fontWeight: FontWeight.bold,),
-              ),
-              subtitle: Text('主辦單位 : '+detail.club),///社團名稱
-              trailing: Text(
-                detail.statue,///活動狀態
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 12.0,
-                ),
-              ),
-            ),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ActiveDetailPage(
-                    detail: detail,
-                  ),
-                ),
-              );
-            },
-          );
-        });
-  }
+  // _buildclub() {
+  //   return Container(
+  //     padding: const EdgeInsets.symmetric(vertical: 8.0), //App bar間隔
+  //     child: Column(
+  //       children: <Widget>[
+  //         CircleAvatar(
+  //           radius: 30,
+  //           // backgroundImage: ExactAssetImage('assets/mypost.png'),
+  //         ),
+  //         Text("社團名稱"),
+  //       ],
+  //     ),
+  //   );
+  // }
 
-  _buildAppbar() {
-    return Container(
-      height: 100,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: <Widget>[
-          _buildclub(),
-          _buildclub(),
-          _buildclub(),
-          _buildclub()
-        ],
-      ),
-    );
-  }
-
-  _buildclub() {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 8.0), //App bar間隔
-      child: Column(
-        children: <Widget>[
-          CircleAvatar(
-            radius: 30,
-            // backgroundImage: ExactAssetImage('assets/mypost.png'),
-          ),
-          Text("社團名稱"),
-        ],
-      ),
-    );
-  }
-
-    _buildact() {
-    return Column(
-      children: <Widget>[
-        Row(
-          children: <Widget>[
-            Expanded(
-              child: Card(
-                child: Column(
-                  children: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          '109年度資管DA',
-                          textAlign: TextAlign.end,
-                          style: TextStyle(fontSize: 24.0),
-                        ),
-                        Text('已報名'),
-                      ],
-                    ),
-                    Row(
-                      children: <Widget>[Text('主辦單位：資訊管理系（建工校區）')],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
-      ],
-    );
-  }
+  //   _buildact() {
+  //   return Column(
+  //     children: <Widget>[
+  //       Row(
+  //         children: <Widget>[
+  //           Expanded(
+  //             child: Card(
+  //               child: Column(
+  //                 children: <Widget>[
+  //                   Row(
+  //                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //                     crossAxisAlignment: CrossAxisAlignment.start,
+  //                     children: <Widget>[
+  //                       Text(
+  //                         '109年度資管DA',
+  //                         textAlign: TextAlign.end,
+  //                         style: TextStyle(fontSize: 24.0),
+  //                       ),
+  //                       Text('已報名'),
+  //                     ],
+  //                   ),
+  //                   Row(
+  //                     children: <Widget>[Text('主辦單位：資訊管理系（建工校區）')],
+  //                   ),
+  //                 ],
+  //               ),
+  //             ),
+  //           ),
+  //         ],
+  //       ),
+  //     ],
+  //   );
+  // }
 
 }
 
