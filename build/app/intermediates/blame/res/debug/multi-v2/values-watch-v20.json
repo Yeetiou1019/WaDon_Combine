@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/yee/Desktop/wadon_main-master 2/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "/Users/yee/Desktop/WaDon_Combine/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
                     "source": "/Users/yee/.gradle/caches/transforms-1/files-1.1/play-services-auth-17.0.0.aar/0594ad00861f9b872ae94594b9bf6e7e/res/values-watch-v20/values.xml",

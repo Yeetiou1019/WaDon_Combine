@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/yee/Desktop/wadon_main-master 2/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rTW/values-zh-rTW.xml",
+            "outputFile": "/Users/yee/Desktop/WaDon_Combine/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rTW/values-zh-rTW.xml",
             "map": [
                 {
                     "source": "/Users/yee/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-17.0.0.aar/1c8ee5569b13df5500fb5591730a85dd/res/values-zh-rTW/values.xml",

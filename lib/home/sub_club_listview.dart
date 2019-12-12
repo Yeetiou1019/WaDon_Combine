@@ -28,7 +28,7 @@ Future getClub() async{
               shrinkWrap: true,
               itemCount: snapshot.data.length,
               itemBuilder: (BuildContext context,index){
-                imageUrl =snapshot.data[index].data['image'];
+                imageUrl = snapshot.data[index].data['image'];
                 return ListTile(
                   title: Text(snapshot.data[index].data['c_name']),
                   leading: CircleAvatar(

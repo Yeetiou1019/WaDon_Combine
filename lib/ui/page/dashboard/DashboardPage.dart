@@ -154,19 +154,6 @@ class _DashboardState extends State<DashboardPage> {
   }
 }
 
-// Widget buildTextfield() {
-//   return TextField(
-//     maxLines: 1,
-//     decoration: new InputDecoration(
-//         hoverColor: Color.fromARGB(255, 50, 50, 200),
-//         icon: Icon(
-//           Icons.search,
-//         ),
-//         hintText: ("搜尋"),
-//         border: InputBorder.none),
-//   );
-// }
-
 Widget buttonGroup() {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceAround,

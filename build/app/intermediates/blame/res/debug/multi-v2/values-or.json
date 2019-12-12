@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/yee/Desktop/wadon_main-master 2/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-or/values-or.xml",
+            "outputFile": "/Users/yee/Desktop/WaDon_Combine/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-or/values-or.xml",
             "map": [
                 {
                     "source": "/Users/yee/.gradle/caches/transforms-1/files-1.1/play-services-base-17.1.0.aar/e80c5436036f94321f42f7189225512d/res/values-or/values.xml",

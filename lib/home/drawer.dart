@@ -75,18 +75,18 @@ class SlideDrawer extends StatelessWidget {
                 }
               },
             ),
-            ExpansionTile(  //可展開列表
-              title: Text('已訂閱社團'),
-              children: <Widget>[ //子列表
-                SubClubListView(account: account,),
-              ],
-        //subtitle: Text('ListSubtitle1',maxLines: 2,overflow: TextOverflow.ellipsis,),
-            leading: CircleAvatar(child: Text("訂")),
-            ),
+        //     ExpansionTile(  //可展開列表
+        //       title: Text('已訂閱社團'),
+        //       children: <Widget>[ //子列表
+        //         SubClubListView(account: account,),
+        //       ],
+        // //subtitle: Text('ListSubtitle1',maxLines: 2,overflow: TextOverflow.ellipsis,),
+        //     leading: CircleAvatar(child: Text("訂")),
+        //     ),
             ExpansionTile(
               title: Text('服務性社團'),
               children: <Widget>[
-                ClubListView(category: '服務性',),
+                ClubListView(category: '服務性',account: account,),
               ],
         //subtitle: Text('ListSubtitle1',maxLines: 2,overflow: TextOverflow.ellipsis,),
             leading: CircleAvatar(child: Text("服")),
@@ -94,7 +94,7 @@ class SlideDrawer extends StatelessWidget {
             ExpansionTile(
               title: Text('學術性社團'),
               children: <Widget>[
-                ClubListView(category: '學',),
+                ClubListView(category: '學',account: account,),
               ],
         //subtitle: Text('ListSubtitle2',maxLines: 2,overflow: TextOverflow.ellipsis,),
               leading: CircleAvatar(child: Text("學")),
@@ -102,7 +102,7 @@ class SlideDrawer extends StatelessWidget {
             ExpansionTile(
               title: Text('康樂性社團'),
               children: <Widget>[
-                ClubListView(category: '康樂性',),
+                ClubListView(category: '康樂性',account: account),
               ],
               //subtitle: Text('ListSubtitle3',maxLines: 2,overflow: TextOverflow.ellipsis,),
               leading: CircleAvatar(child: Text("康")),
@@ -110,15 +110,15 @@ class SlideDrawer extends StatelessWidget {
             ExpansionTile(
               title: Text('體育性社團'),
               children: <Widget>[
-                ClubListView(category: '體育性',),
+                ClubListView(category: '體育性',account: account),
               ],
               //subtitle: Text('ListSubtitle3',maxLines: 2,overflow: TextOverflow.ellipsis,),
-              leading: CircleAvatar(child: Text("體")),
+              leading: CircleAvatar(child: Text("體"),),
             ),
             ExpansionTile(
               title: Text('系學會'),
               children: <Widget>[
-                ClubListView(category: '系學會',),
+                ClubListView(category: '系學會',account: account),
               ],
               //subtitle: Text('ListSubtitle3',maxLines: 2,overflow: TextOverflow.ellipsis,),
               leading: CircleAvatar(child: Text("系")),
