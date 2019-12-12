@@ -1,7 +1,11 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "C:\\Users\\oaoxd\\OneDrive\\Desktop\\Wadon_Combine_Git\\WaDon_Combine\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-km\\values-km.xml",
+=======
+            "outputFile": "/Users/yee/Desktop/WaDon_Combine/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-km/values-km.xml",
+>>>>>>> 4762d28a1a5040cdda79218074ba1033da4a3a7c
             "map": [
                 {
                     "source": "C:\\Users\\oaoxd\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-17.1.0.aar\\ac0f1c649730cbdcf2b8e40cac2285e0\\res\\values-km\\values.xml",

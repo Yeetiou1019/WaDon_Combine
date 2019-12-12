@@ -40,6 +40,10 @@ class _SearchFieldState extends State<SearchField> {
     QuerySnapshot qn = await firestore.collection('club').getDocuments();
     return  qn.documents;
   } 
+<<<<<<< HEAD
+=======
+  String imageUrl ;
+>>>>>>> 4762d28a1a5040cdda79218074ba1033da4a3a7c
 
   @override
   Widget build(BuildContext context) {
@@ -98,6 +102,16 @@ class _SearchFieldState extends State<SearchField> {
                                     }
                                   }
                                   return ListTile(
+<<<<<<< HEAD
+=======
+                                    leading: CircleAvatar(
+                                      child:ClipOval(
+                                        child: Image.network(
+                                          imageUrl),
+                                        ),
+                                      backgroundImage: NetworkImage(imageUrl),
+                                    ),
+>>>>>>> 4762d28a1a5040cdda79218074ba1033da4a3a7c
                                     title: Text(snap.data["p_title"]),
                                     subtitle:
                                       Column(

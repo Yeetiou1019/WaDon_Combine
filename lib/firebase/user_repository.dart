@@ -59,9 +59,18 @@ class UserRepository {
     return currentUser != null;
   }
 
-  Future<String> getUser() async {
+Future<String> getUser() async {
     return (await _firebaseAuth.currentUser()).email;
   }
+}
+
+Future<String> getUserName(String account) async {
+// 用使用者信箱當作索引值去找到對應的文件
+  var doc = await Firestore.instance.collection('users').document(account).get();
+  if (doc.exists) {
+    return doc.data['u_name'];
+  }
+  return '';
 }
 
 Future<String> getProfilePictureUrl(String account) async {
@@ -77,7 +86,14 @@ void updateProfilePictureUrl(String account, String url) async {
 // 用使用者信箱當作索引值去新增or更新 圖片路徑
     await Firestore.instance.collection("users").document(account).setData({
       'user_picture': url,
-    });
+    },
+    merge: true);
+}
+
+void updateUserToken(String account, String token) async {
+  await Firestore.instance.collection("users").document(account).setData({
+    'fcm_token': token,
+  }, merge: true);
 }
 
 class Repository {

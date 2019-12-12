@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../ui/page/page.dart';
 import '../home/drawer.dart';
+import '../ui/page/dashboard/SearchField.dart';
 
 class HomePage extends StatefulWidget {
   final String account;
@@ -17,6 +18,34 @@ class _HomePageState extends State<HomePage> {
   }
 
 
+<<<<<<< HEAD
+=======
+  int _selectIndex = 0;
+  final List<Widget> pages = [
+    // DashboardPage(
+    //   key: PageStorageKey('DashboardPage'),
+    // ),
+    DashboardPage(
+      key: PageStorageKey('DashboardPage')
+      ),
+    SubscriptionPage(
+      key: PageStorageKey('SubscriptionPage'),
+    ),
+    ActivityPage(
+      key: PageStorageKey('ActivityPage'),
+    ),
+    // NotificationPage(
+    //   key: PageStorageKey('NotificationPage'),
+    // ),
+    SearchField(
+      key: PageStorageKey('SearchField'),
+    ),
+    ProfilePage(
+      key: PageStorageKey('ProfilePage'),
+    ),
+  ];
+
+>>>>>>> 4762d28a1a5040cdda79218074ba1033da4a3a7c
   final PageStorageBucket bucket = PageStorageBucket();
   int _selectIndex = 0; 
   Widget _bottomNavigationBar(int selectIndex) => Theme(

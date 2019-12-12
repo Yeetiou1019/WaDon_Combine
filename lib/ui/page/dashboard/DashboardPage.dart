@@ -8,6 +8,7 @@ import 'package:wadone_main/ui/page/activity/activeDetailPage.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:wadone_main/ui/page/activity/ActivityPage.dart';
+import '../dashboard/SearchField.dart';
 
 class DashboardPage extends StatefulWidget {
   final String account;
@@ -48,7 +49,6 @@ class _DashboardState extends State<DashboardPage> {
                         ),
                       ),
                   children: [
-                    buildTextfield(),
                     buttonGroup(),
                     buildCarousel(),
                     body()
@@ -166,6 +166,7 @@ class _DashboardState extends State<DashboardPage> {
   }
 }
 
+<<<<<<< HEAD
 Widget buildTextfield() {
   return TextField(
     maxLines: 1,
@@ -179,6 +180,8 @@ Widget buildTextfield() {
   );
 }
 
+=======
+>>>>>>> 4762d28a1a5040cdda79218074ba1033da4a3a7c
 Widget buttonGroup() {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceAround,

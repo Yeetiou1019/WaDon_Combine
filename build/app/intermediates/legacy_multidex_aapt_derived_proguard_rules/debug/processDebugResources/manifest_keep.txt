@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 # Referenced at C:\Users\oaoxd\OneDrive\Desktop\Wadon_Combine_Git\WaDon_Combine\build\app\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:28
+=======
+# Referenced at /Users/yee/Desktop/WaDon_Combine/build/app/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:28
+>>>>>>> 4762d28a1a5040cdda79218074ba1033da4a3a7c
 -keep class io.flutter.app.FlutterApplication { <init>(...); }
