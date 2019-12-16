@@ -1,21 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
-class NotificationPage extends StatefulWidget{
-  const NotificationPage({Key key}) : super(key:key);
+class NotificationPage extends StatefulWidget {
+  final String account;
+  const NotificationPage({Key key, this.account}) : super(key: key);
   @override
   _NotificationPageState createState() => _NotificationPageState();
 }
 
-class _NotificationPageState extends State<NotificationPage>{
+class _NotificationPageState extends State<NotificationPage> {
   @override
-  Widget build(BuildContext context)
-  {
-    return new Scaffold
-    (
-      body: new Center
-      (
-        child: new Text("這是通知"),
-      ),
-    );
+  Widget build(BuildContext context) {
+    return Scaffold(
+        resizeToAvoidBottomPadding: false,
+        body: SingleChildScrollView(
+          child: AnimationLimiter(
+            child: Column(
+              children: AnimationConfiguration.toStaggeredList(
+                  duration: const Duration(milliseconds: 375),
+                  childAnimationBuilder: (widget) => SlideAnimation(
+                        horizontalOffset: 50.0,
+                        child: FadeInAnimation(
+                          child: widget,
+                        ),
+                      ),
+                  children: [
+                    Text('訂閱')
+                  ]),
+            ),
+          ),
+        ));
   }
+
+
 }

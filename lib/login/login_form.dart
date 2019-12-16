@@ -53,7 +53,7 @@ class _LoginFormState extends State<LoginForm> {
               SnackBar(
                 content: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [Text('Login Failure'), Icon(Icons.error)],
+                  children: [Text('登入失敗'), Icon(Icons.error)],
                 ),
                 backgroundColor: Colors.red,
               ),
@@ -68,7 +68,7 @@ class _LoginFormState extends State<LoginForm> {
                 content: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Logging In...'),
+                    Text('登入中...'),
                     CircularProgressIndicator(),
                   ],
                 ),
@@ -101,25 +101,25 @@ class _LoginFormState extends State<LoginForm> {
                     controller: _emailController,
                     decoration: InputDecoration(
                       icon: Icon(Icons.email),
-                      labelText: 'Email',
+                      labelText: '電子信箱',
                     ),
                     autovalidate: true,
                     autocorrect: false,
                     validator: (_) {
-                      return !state.isEmailValid ? 'Invalid Email' : null;
+                      return !state.isEmailValid ? '無效的電子信箱' : null;
                     },
                   ),
                   TextFormField(
                     controller: _passwordController,
                     decoration: InputDecoration(
                       icon: Icon(Icons.lock),
-                      labelText: 'Password',
+                      labelText: '密碼',
                     ),
                     obscureText: true,
                     autovalidate: true,
                     autocorrect: false,
                     validator: (_) {
-                      return !state.isPasswordValid ? 'Invalid Password' : null;
+                      return !state.isPasswordValid ? '無效的密碼' : null;
                     },
                   ),
                   CheckboxListTile(
@@ -130,7 +130,7 @@ class _LoginFormState extends State<LoginForm> {
                       });
                     _saveCheckout(value);
                     },
-                    title: Text('自動登入'),
+                    title: Text('記住帳號密碼'),
                     controlAffinity: ListTileControlAffinity.leading,
                   ),
                   Padding(

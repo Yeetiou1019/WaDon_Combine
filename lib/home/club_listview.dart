@@ -29,6 +29,7 @@ Future createSubClub() async {
     .setData({
         'c_name': cName,
         'property': this.category,
+        'image':'https://firebasestorage.googleapis.com/v0/b/wadone-8ae44.appspot.com/o/ic.png?alt=media&token=11fbca18-f70d-422a-baaa-fbfed095c346',
       });
 }
 
@@ -37,7 +38,9 @@ void deleteSubClub() {
     var firestore = Firestore.instance;
       firestore
         .collection('subscribe')
-        .document(cName)
+        .document(account)
+        .collection('subscribe_club')
+        .document(cId)
         .delete();
   } catch (e) {
     print(e.toString());
@@ -63,6 +66,7 @@ Widget  build(BuildContext context) {
               String imageUrl = snapshot.data[index].data['image'];
                 return ListTile(
                   title: Text(snapshot.data[index].data['c_name']),
+                  //onTap: (){},
                   trailing: 
                     SizedBox(
                       width: 40,
@@ -78,11 +82,13 @@ Widget  build(BuildContext context) {
                                 //createRecord();
                               },
                           );
-                        }
+                        }else{
+
                         for(var i = 0;i<snapshot.data.length;i++){
                               for(var j = 0; j<subsnapshot.data.length;j++){
-                              if(subsnapshot.data[j].data['c_name'] == snapshot.data[i].data['c_name']  ){
-                                return IconButton(
+                              //if(subsnapshot.data[j].data['c_name'] == snapshot.data[i].data['c_name']  ){
+                                switch (subsnapshot.data[j].data['c_name'] == snapshot.data[i].data['c_name']) {
+                                  case true: return IconButton(
                                   icon: Icon(Icons.rss_feed),
                                   color: Colors.blue,
                                   onPressed: (){
@@ -93,21 +99,53 @@ Widget  build(BuildContext context) {
                                   highlightColor: Colors.blueGrey,
                                   disabledColor: Colors.pinkAccent,
                                 );
-                              }
-                            }break;
-                        }return IconButton(
+                                  break;
+                                  default:return IconButton(
                                   icon: Icon(Icons.rss_feed),
                                   color: Colors.grey,
                                   onPressed: (){
-                                    cName = snapshot.data[0].data['c_name'];
-                                    cId = snapshot.data[0].data['c_id'];
-                                    createSubClub();
-
+                                      cName = snapshot.data[i].data['c_name'];  
+                                      cId = snapshot.data[i].data['c_id'];                             
+                                      createSubClub();
                                   },
                                   highlightColor: Colors.blueGrey,
                                   disabledColor: Colors.pinkAccent,
-                                );  
+                                );
+                                }
+                              }
+                              break;
+                            }return IconButton(
+                                  icon: Icon(Icons.rss_feed),
+                                  color: Colors.grey,
+                                  onPressed: (){
+                                      cName = snapshot.data[0].data['c_name'];  
+                                      cId = snapshot.data[0].data['c_id'];                             
+                                      createSubClub();
+                                  },
+                                  highlightColor: Colors.blueGrey,
+                                  disabledColor: Colors.pinkAccent,
+                                );
+                            
+                        // return IconButton(
+                        //           icon: Icon(Icons.rss_feed),
+                        //           color: Colors.grey,
+                        //           onPressed: (){
+                        //             if(subsnapshot.data[0].data['c_name'] == snapshot.data[0].data['c_name']){
+                        //               cName = snapshot.data[0].data['c_name'];  
+                        //               cId = snapshot.data[0].data['c_id'];                             
+                        //               deleteSubClub();
+                        //               } 
+                        //               if(subsnapshot.data == null){
+                        //                 cName = snapshot.data[0].data['c_name'];  
+                        //                 cId = snapshot.data[0].data['c_id'];                             
+                        //                 createSubClub();  
+                        //               }
+                        //           },
+                        //           highlightColor: Colors.blueGrey,
+                        //           disabledColor: Colors.pinkAccent,
+                        //         );
                           //subsnapshot.data[index].data['c_name'] == snapshot.data[index].data['c_name'] 
+                        }
                       }
                     ),
                   ),

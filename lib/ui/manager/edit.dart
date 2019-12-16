@@ -12,6 +12,9 @@ class Edit extends StatefulWidget {
 }
 
 class _EditState extends State<Edit> {
+   var _selectType;
+
+  String statue=('請選擇');
   Managerbloc _bloc;
   TextEditingController myController = TextEditingController();
 
@@ -70,8 +73,8 @@ class _EditState extends State<Edit> {
               Container(margin: EdgeInsets.only(top: 5.0, bottom: 5.0)),
               numlimitField(),
               Container(margin: EdgeInsets.only(top: 5.0, bottom: 5.0)),
-              // statueField(),
-              // Container(margin: EdgeInsets.only(top: 5.0, bottom: 5.0)),
+              statueField(),
+               Container(margin: EdgeInsets.only(top: 5.0, bottom: 5.0)),
               plocaltion(),
               Container(margin: EdgeInsets.only(top: 5.0, bottom: 5.0)),
               pnote(),
@@ -218,7 +221,62 @@ class _EditState extends State<Edit> {
         });
   }
 
+Widget statueField() {
+    return StreamBuilder(
+        stream: _bloc.statue,
+        builder: (context, AsyncSnapshot<String> snapshot) {
+          int ststue=0;
+          return Container(
+              height: 35,
+              width: MediaQuery.of(context).size.width - 140,
+              decoration: BoxDecoration(
+                  border:Border(bottom:BorderSide(width: 1,color: Color(0xffe5e5e5)) )
+              ),
+              child: new DropdownButtonHideUnderline(
+                  child: new DropdownButton(
+                    items: [
+                      new DropdownMenuItem(
+                        child: new Text('報名中'),
+                        value: 0,
+                      ),
+                      new DropdownMenuItem(
+                        child: new Text('活動中'),
+                        value: 1,
+                      ),
+                      new DropdownMenuItem(
+                        child: new Text('已結束'),
+                        value: 2,
+                      ),
+                    ],
+                    
+                    hint: new Text(statue),
+                    onChanged: (value){
+                      setState(() {
+                        if(value ==0){
+                          _bloc.changeststue('報名中');
+                          statue=('報名中');
+                        }
+                        else if(value == 1){
+                          _bloc.changeststue('活動中');
+                          statue=('活動中');
+                        }
+                        else{
+                          _bloc.changeststue('已結束');
+                          statue=('已結束');
+                        }
+                      });
+                    },
 
+                    value: _selectType,
+                    elevation: 24,//设置阴影的高度
+                    style: new TextStyle(//设置文本框里面文字的样式
+                      color: Color(0xff4a4a4a),
+                    ),
+                  )
+              )
+          );
+        });
+  }
 
 
 

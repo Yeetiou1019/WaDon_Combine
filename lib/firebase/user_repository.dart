@@ -39,11 +39,11 @@ class UserRepository {
     );
   }
   
-  Future<void> addUserToFirestore(String email, String password) async {
+  Future<void> addUserToFirestore(String email,String password,String cId,String gender,String tel,String name,String student) async {
     return _firestore
         .collection("users")
         .document(email)
-        .setData({'email': email, 'password': password, 'goalAdded': false});
+        .setData({'email': email, 'club': cId,'gender':gender,'tel':tel,'name':name,'studentID':student,'property':false,'user_picture':'https://firebasestorage.googleapis.com/v0/b/wadone-8ae44.appspot.com/o/man.jpg?alt=media&token=7ae63ec1-0d99-4b99-87da-fec2792b3c6a'});
   }
 
 
@@ -59,7 +59,7 @@ class UserRepository {
     return currentUser != null;
   }
 
-Future<String> getUser() async {
+  Future<String> getUser() async {
     return (await _firebaseAuth.currentUser()).email;
   }
 }
@@ -68,7 +68,7 @@ Future<String> getUserName(String account) async {
 // 用使用者信箱當作索引值去找到對應的文件
   var doc = await Firestore.instance.collection('users').document(account).get();
   if (doc.exists) {
-    return doc.data['u_name'];
+    return doc.data['name'];
   }
   return '';
 }
@@ -86,14 +86,7 @@ void updateProfilePictureUrl(String account, String url) async {
 // 用使用者信箱當作索引值去新增or更新 圖片路徑
     await Firestore.instance.collection("users").document(account).setData({
       'user_picture': url,
-    },
-    merge: true);
-}
-
-void updateUserToken(String account, String token) async {
-  await Firestore.instance.collection("users").document(account).setData({
-    'fcm_token': token,
-  }, merge: true);
+    });
 }
 
 class Repository {
@@ -116,4 +109,12 @@ class Repository {
 
   Future<void> edit(String thatclubid,String activeId,String ptitle, String pcontent, String clublimit, String numlimit, String plocaltion, String pnote,String statue,String name) =>
   _firestoreProvider.edit(thatclubid,activeId,ptitle,pcontent,clublimit,numlimit,plocaltion,pnote,statue,name);
+
+  Stream<DocumentSnapshot> getUserData(String account) => _firestoreProvider.getUserData(account);
+
+  Stream<QuerySnapshot> subscribeList(String account) =>_firestoreProvider.subscribeList(account);
+
+  Stream<QuerySnapshot> clubpost(String clubid) => _firestoreProvider.clubpost(clubid);
+
+  Stream<QuerySnapshot> userJoinList(String account) => _firestoreProvider.userJoinList(account);
 }

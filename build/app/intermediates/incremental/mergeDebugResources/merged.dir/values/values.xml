@@ -1765,6 +1765,7 @@
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
     <string name="default_web_client_id" translatable="false">788303852952-kmkip681aljja24rcs3vctmggvajablj.apps.googleusercontent.com</string>
+    <string name="fcm_fallback_notification_channel_label">Miscellaneous</string>
     <string name="firebase_database_url" translatable="false">https://wadone-8ae44.firebaseio.com</string>
     <string name="gcm_defaultSenderId" translatable="false">788303852952</string>
     <string name="google_api_key" translatable="false">AIzaSyBrG5gmECq5JcXmATm-dmsCY8-yHOp-Bqk</string>

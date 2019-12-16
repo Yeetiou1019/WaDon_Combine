@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:rxdart/rxdart.dart';
 import 'package:wadone_main/firebase/user_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:wadone_main/string.dart';
 
 class Managerbloc {
   final _repository=Repository();
@@ -21,23 +22,20 @@ class Managerbloc {
   final _statue = BehaviorSubject<String>();
   final _showProgress = BehaviorSubject<bool>();  
 
-
-  final _thatclubid = 'nkust_IC';
-
   Observable<String> get pid => _pid.stream;
-  Observable<String> get pname => _pname.stream;
-  Observable<String> get clubid => _clubid.stream;
-  Observable<String> get ptitle => _ptitle.stream;
-  Observable<String> get pcontent => _pcontent.stream;
-  Observable<String> get clublimit => _clublimit.stream;
-  Observable<String> get numlimit => _numlimit.stream;
-  Observable<String> get plocaltion => _plocaltion.stream;
-  Observable<String> get pnote => _pnote.stream;
+  Observable<String> get pname => _pname.stream;///length > 10
+  Observable<String> get clubid => _clubid.stream;///
+  Observable<String> get ptitle => _ptitle.stream;///
+  Observable<String> get pcontent => _pcontent.stream;/// 
+  Observable<String> get clublimit => _clublimit.stream;///
+  Observable<String> get numlimit => _numlimit.stream;///
+  Observable<String> get plocaltion => _plocaltion.stream;///
+  Observable<String> get pnote => _pnote.stream;///
   // Observable<Timestamp> get singup => _singup.stream;
   // Observable<Timestamp> get singend => _singend.stream;
   // Observable<Timestamp> get actend => _actend.stream;
   // Observable<Timestamp> get actstart => _actstart.stream;
-  Observable<String> get statue => _statue.stream;
+  Observable<String> get statue => _statue.stream.transform(_validateStatue);/// singing acting end
   Observable<bool> get showProgress => _showProgress.stream;
 
 //change data
@@ -64,6 +62,15 @@ class Managerbloc {
   //     sink.add(id);
   //   }
   // });
+
+  final _validateStatue = StreamTransformer<String, String>.fromHandlers(
+      handleData: (String name, sink) {
+    if (RegExp(r'[!@#<>?":_`~;[\]\\|=+)(*&^%0-9-]').hasMatch(name)) {
+      sink.addError(StringConstant.nameValidateMessage);
+    } else {
+      sink.add(name);
+    }
+  });
 
   Stream<QuerySnapshot> pageList() {
     return _repository.pageList();

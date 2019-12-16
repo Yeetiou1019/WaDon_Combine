@@ -170,23 +170,23 @@ class _ManagerState extends State<Manager> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      '活動時間：108年12月25號',
+                      '系學會辦公地點：高科大-燕巢校區（MA305）',
                       style: TextStyle(fontSize: 15),
                     ),
                     Text(
-                      '活動時間：17：30~21：00',
+                      '系主任：張添香',
+                      style: TextStyle(fontSize: 15),
+                    ),
+                   Text(
+                      '系會長：劉聖龍',
                       style: TextStyle(fontSize: 15),
                     ),
                     Text(
-                      '活動地點：高科大-燕巢校區（管一外空地）',
+                      '系辦信箱：劉聖龍',
                       style: TextStyle(fontSize: 15),
                     ),
                     Text(
-                      '活動備注：自備餐具（提倡環保）',
-                      style: TextStyle(fontSize: 15),
-                    ),
-                    Text(
-                      '活動内容：藉由聖誕節的到來，讓資管大家庭的孩子們同聚一堂',
+                      '電話： (07)381-4526 轉7554',
                       style: TextStyle(fontSize: 15),
                     ),
                   ],

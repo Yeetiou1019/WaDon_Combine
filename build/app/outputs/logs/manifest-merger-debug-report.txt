@@ -18,6 +18,7 @@ MERGED from [com.google.firebase:firebase-database:9.6.1] /Users/yee/.gradle/cac
 MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/93ae11ecad8b3c1db496c53c402ca37d/AndroidManifest.xml:17:1-24:12
 MERGED from [:firebase_storage] /Users/yee/Desktop/WaDon_Combine/build/firebase_storage/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-15:12
 MERGED from [:sqflite] /Users/yee/Desktop/WaDon_Combine/build/sqflite/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-7:12
+MERGED from [:firebase_messaging] /Users/yee/Desktop/WaDon_Combine/build/firebase_messaging/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-20:12
 MERGED from [:shared_preferences] /Users/yee/Desktop/WaDon_Combine/build/shared_preferences/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-7:12
 MERGED from [:image_picker] /Users/yee/Desktop/WaDon_Combine/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-22:12
 MERGED from [:firebase_core] /Users/yee/Desktop/WaDon_Combine/build/firebase_core/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-15:12
@@ -28,7 +29,8 @@ MERGED from [com.google.firebase:firebase-storage:17.0.0] /Users/yee/.gradle/cac
 MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-auth-interop-19.0.0.aar/ad13d8746f3d480b88f06829f1c84890/AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.android.gms:play-services-auth-api-phone:17.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-17.0.0.aar/ed8434dba9f51017bcfb9672eaa8e6b5/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-17.0.0.aar/ba5c91991589d52b5a3988f704f3b4f6/AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-19.0.0.aar/bb030f911d0015108968ac924fad8630/AndroidManifest.xml:17:1-47:12
+MERGED from [com.google.firebase:firebase-messaging:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/jetified-firebase-messaging-20.0.0.aar/4abf30a8ec267ce44eec70ec64c63dcc/AndroidManifest.xml:17:1-37:12
+MERGED from [com.google.firebase:firebase-iid:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-20.0.0.aar/0e39813f04fa091174ce3418cc9d52f9/AndroidManifest.xml:17:1-47:12
 MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-interop-17.0.0.aar/d3499c456c4fdbff6ff6c89b29b4d4d7/AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.android.gms:play-services-base:17.1.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/play-services-base-17.1.0.aar/e80c5436036f94321f42f7189225512d/AndroidManifest.xml:17:1-29:12
 MERGED from [com.google.firebase:firebase-database-connection:9.6.1] /Users/yee/.gradle/caches/transforms-1/files-1.1/jetified-firebase-database-connection-9.6.1.aar/731cadbe85b6e479b26c3cd079cf586f/AndroidManifest.xml:2:1-4:12
@@ -103,6 +105,8 @@ MERGED from [com.google.android.gms:play-services-auth:17.0.0] /Users/yee/.gradl
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/play-services-auth-17.0.0.aar/0594ad00861f9b872ae94594b9bf6e7e/AndroidManifest.xml:22:5-37:19
 MERGED from [:firebase_storage] /Users/yee/Desktop/WaDon_Combine/build/firebase_storage/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_storage] /Users/yee/Desktop/WaDon_Combine/build/firebase_storage/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_messaging] /Users/yee/Desktop/WaDon_Combine/build/firebase_messaging/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-18:19
+MERGED from [:firebase_messaging] /Users/yee/Desktop/WaDon_Combine/build/firebase_messaging/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-18:19
 MERGED from [:image_picker] /Users/yee/Desktop/WaDon_Combine/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:10:5-20:19
 MERGED from [:image_picker] /Users/yee/Desktop/WaDon_Combine/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:10:5-20:19
 MERGED from [:firebase_core] /Users/yee/Desktop/WaDon_Combine/build/firebase_core/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-13:19
@@ -117,8 +121,10 @@ MERGED from [com.google.firebase:firebase-storage:17.0.0] /Users/yee/.gradle/cac
 MERGED from [com.google.firebase:firebase-storage:17.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/jetified-firebase-storage-17.0.0.aar/4b132b2285e307dfb6b9cf0e142a90bd/AndroidManifest.xml:29:5-35:19
 MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-auth-interop-19.0.0.aar/ad13d8746f3d480b88f06829f1c84890/AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-auth-interop-19.0.0.aar/ad13d8746f3d480b88f06829f1c84890/AndroidManifest.xml:7:5-8:19
-MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-19.0.0.aar/bb030f911d0015108968ac924fad8630/AndroidManifest.xml:28:5-45:19
-MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-19.0.0.aar/bb030f911d0015108968ac924fad8630/AndroidManifest.xml:28:5-45:19
+MERGED from [com.google.firebase:firebase-messaging:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/jetified-firebase-messaging-20.0.0.aar/4abf30a8ec267ce44eec70ec64c63dcc/AndroidManifest.xml:22:5-35:19
+MERGED from [com.google.firebase:firebase-messaging:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/jetified-firebase-messaging-20.0.0.aar/4abf30a8ec267ce44eec70ec64c63dcc/AndroidManifest.xml:22:5-35:19
+MERGED from [com.google.firebase:firebase-iid:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-20.0.0.aar/0e39813f04fa091174ce3418cc9d52f9/AndroidManifest.xml:28:5-45:19
+MERGED from [com.google.firebase:firebase-iid:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-20.0.0.aar/0e39813f04fa091174ce3418cc9d52f9/AndroidManifest.xml:28:5-45:19
 MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-interop-17.0.0.aar/d3499c456c4fdbff6ff6c89b29b4d4d7/AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-interop-17.0.0.aar/d3499c456c4fdbff6ff6c89b29b4d4d7/AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.android.gms:play-services-base:17.1.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/play-services-base-17.1.0.aar/e80c5436036f94321f42f7189225512d/AndroidManifest.xml:22:5-27:19
@@ -227,6 +233,8 @@ MERGED from [:firebase_storage] /Users/yee/Desktop/WaDon_Combine/build/firebase_
 MERGED from [:firebase_storage] /Users/yee/Desktop/WaDon_Combine/build/firebase_storage/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
 MERGED from [:sqflite] /Users/yee/Desktop/WaDon_Combine/build/sqflite/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
 MERGED from [:sqflite] /Users/yee/Desktop/WaDon_Combine/build/sqflite/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_messaging] /Users/yee/Desktop/WaDon_Combine/build/firebase_messaging/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_messaging] /Users/yee/Desktop/WaDon_Combine/build/firebase_messaging/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences] /Users/yee/Desktop/WaDon_Combine/build/shared_preferences/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences] /Users/yee/Desktop/WaDon_Combine/build/shared_preferences/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
 MERGED from [:image_picker] /Users/yee/Desktop/WaDon_Combine/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
@@ -247,8 +255,10 @@ MERGED from [com.google.android.gms:play-services-auth-api-phone:17.0.0] /Users/
 MERGED from [com.google.android.gms:play-services-auth-api-phone:17.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-17.0.0.aar/ed8434dba9f51017bcfb9672eaa8e6b5/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-17.0.0.aar/ba5c91991589d52b5a3988f704f3b4f6/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-17.0.0.aar/ba5c91991589d52b5a3988f704f3b4f6/AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-19.0.0.aar/bb030f911d0015108968ac924fad8630/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-19.0.0.aar/bb030f911d0015108968ac924fad8630/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-messaging:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/jetified-firebase-messaging-20.0.0.aar/4abf30a8ec267ce44eec70ec64c63dcc/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-messaging:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/jetified-firebase-messaging-20.0.0.aar/4abf30a8ec267ce44eec70ec64c63dcc/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-20.0.0.aar/0e39813f04fa091174ce3418cc9d52f9/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-20.0.0.aar/0e39813f04fa091174ce3418cc9d52f9/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-interop-17.0.0.aar/d3499c456c4fdbff6ff6c89b29b4d4d7/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-interop-17.0.0.aar/d3499c456c4fdbff6ff6c89b29b4d4d7/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-base:17.1.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/play-services-base-17.1.0.aar/e80c5436036f94321f42f7189225512d/AndroidManifest.xml:20:5-44
@@ -349,8 +359,8 @@ MERGED from [com.google.android.gms:play-services-measurement-api:17.2.1] /Users
 MERGED from [com.google.android.gms:play-services-measurement-api:17.2.1] /Users/yee/.gradle/caches/transforms-1/files-1.1/play-services-measurement-api-17.2.1.aar/1a4ebf90763444f543bc945f89508f33/AndroidManifest.xml:22:5-67
 MERGED from [com.google.firebase:firebase-storage:17.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/jetified-firebase-storage-17.0.0.aar/4b132b2285e307dfb6b9cf0e142a90bd/AndroidManifest.xml:27:5-67
 MERGED from [com.google.firebase:firebase-storage:17.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/jetified-firebase-storage-17.0.0.aar/4b132b2285e307dfb6b9cf0e142a90bd/AndroidManifest.xml:27:5-67
-MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-19.0.0.aar/bb030f911d0015108968ac924fad8630/AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-19.0.0.aar/bb030f911d0015108968ac924fad8630/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-20.0.0.aar/0e39813f04fa091174ce3418cc9d52f9/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-20.0.0.aar/0e39813f04fa091174ce3418cc9d52f9/AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.1] /Users/yee/.gradle/caches/transforms-1/files-1.1/play-services-measurement-impl-17.2.1.aar/63aafa2da69fa8690441c5c81badee6e/AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.1] /Users/yee/.gradle/caches/transforms-1/files-1.1/play-services-measurement-impl-17.2.1.aar/63aafa2da69fa8690441c5c81badee6e/AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.1] /Users/yee/.gradle/caches/transforms-1/files-1.1/play-services-measurement-sdk-api-17.2.1.aar/121754afa65eade5866c4fef4835ffe7/AndroidManifest.xml:23:5-67
@@ -367,8 +377,8 @@ MERGED from [com.google.android.gms:play-services-measurement-api:17.2.1] /Users
 MERGED from [com.google.android.gms:play-services-measurement-api:17.2.1] /Users/yee/.gradle/caches/transforms-1/files-1.1/play-services-measurement-api-17.2.1.aar/1a4ebf90763444f543bc945f89508f33/AndroidManifest.xml:23:5-79
 MERGED from [com.google.firebase:firebase-storage:17.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/jetified-firebase-storage-17.0.0.aar/4b132b2285e307dfb6b9cf0e142a90bd/AndroidManifest.xml:26:5-79
 MERGED from [com.google.firebase:firebase-storage:17.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/jetified-firebase-storage-17.0.0.aar/4b132b2285e307dfb6b9cf0e142a90bd/AndroidManifest.xml:26:5-79
-MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-19.0.0.aar/bb030f911d0015108968ac924fad8630/AndroidManifest.xml:22:5-79
-MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-19.0.0.aar/bb030f911d0015108968ac924fad8630/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-iid:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-20.0.0.aar/0e39813f04fa091174ce3418cc9d52f9/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-iid:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-20.0.0.aar/0e39813f04fa091174ce3418cc9d52f9/AndroidManifest.xml:22:5-79
 MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.1] /Users/yee/.gradle/caches/transforms-1/files-1.1/play-services-measurement-impl-17.2.1.aar/63aafa2da69fa8690441c5c81badee6e/AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.1] /Users/yee/.gradle/caches/transforms-1/files-1.1/play-services-measurement-impl-17.2.1.aar/63aafa2da69fa8690441c5c81badee6e/AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.1] /Users/yee/.gradle/caches/transforms-1/files-1.1/play-services-measurement-sdk-api-17.2.1.aar/121754afa65eade5866c4fef4835ffe7/AndroidManifest.xml:24:5-79
@@ -383,8 +393,8 @@ MERGED from [com.google.android.gms:play-services-measurement:17.2.1] /Users/yee
 MERGED from [com.google.android.gms:play-services-measurement:17.2.1] /Users/yee/.gradle/caches/transforms-1/files-1.1/play-services-measurement-17.2.1.aar/8ebc7d207b29b3dd10dc50c5303876c3/AndroidManifest.xml:25:5-68
 MERGED from [com.google.android.gms:play-services-measurement-api:17.2.1] /Users/yee/.gradle/caches/transforms-1/files-1.1/play-services-measurement-api-17.2.1.aar/1a4ebf90763444f543bc945f89508f33/AndroidManifest.xml:24:5-68
 MERGED from [com.google.android.gms:play-services-measurement-api:17.2.1] /Users/yee/.gradle/caches/transforms-1/files-1.1/play-services-measurement-api-17.2.1.aar/1a4ebf90763444f543bc945f89508f33/AndroidManifest.xml:24:5-68
-MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-19.0.0.aar/bb030f911d0015108968ac924fad8630/AndroidManifest.xml:24:5-68
-MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-19.0.0.aar/bb030f911d0015108968ac924fad8630/AndroidManifest.xml:24:5-68
+MERGED from [com.google.firebase:firebase-iid:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-20.0.0.aar/0e39813f04fa091174ce3418cc9d52f9/AndroidManifest.xml:24:5-68
+MERGED from [com.google.firebase:firebase-iid:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-20.0.0.aar/0e39813f04fa091174ce3418cc9d52f9/AndroidManifest.xml:24:5-68
 MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.1] /Users/yee/.gradle/caches/transforms-1/files-1.1/play-services-measurement-impl-17.2.1.aar/63aafa2da69fa8690441c5c81badee6e/AndroidManifest.xml:25:5-68
 MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.1] /Users/yee/.gradle/caches/transforms-1/files-1.1/play-services-measurement-impl-17.2.1.aar/63aafa2da69fa8690441c5c81badee6e/AndroidManifest.xml:25:5-68
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.1] /Users/yee/.gradle/caches/transforms-1/files-1.1/play-services-measurement-sdk-api-17.2.1.aar/121754afa65eade5866c4fef4835ffe7/AndroidManifest.xml:25:5-68
@@ -403,14 +413,16 @@ MERGED from [com.google.firebase:firebase-firestore:21.3.0] /Users/yee/.gradle/c
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/jetified-firebase-firestore-21.3.0.aar/d0ada40c779a5dbce78fd53389a38049/AndroidManifest.xml:17:9-23:19
 MERGED from [:firebase_storage] /Users/yee/Desktop/WaDon_Combine/build/firebase_storage/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:8:9-12:19
 MERGED from [:firebase_storage] /Users/yee/Desktop/WaDon_Combine/build/firebase_storage/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:8:9-12:19
+MERGED from [:firebase_messaging] /Users/yee/Desktop/WaDon_Combine/build/firebase_messaging/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:13:9-17:19
+MERGED from [:firebase_messaging] /Users/yee/Desktop/WaDon_Combine/build/firebase_messaging/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:13:9-17:19
 MERGED from [:firebase_core] /Users/yee/Desktop/WaDon_Combine/build/firebase_core/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:8:9-12:19
 MERGED from [:firebase_core] /Users/yee/Desktop/WaDon_Combine/build/firebase_core/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:8:9-12:19
 MERGED from [com.google.android.gms:play-services-measurement-api:17.2.1] /Users/yee/.gradle/caches/transforms-1/files-1.1/play-services-measurement-api-17.2.1.aar/1a4ebf90763444f543bc945f89508f33/AndroidManifest.xml:27:9-33:19
 MERGED from [com.google.android.gms:play-services-measurement-api:17.2.1] /Users/yee/.gradle/caches/transforms-1/files-1.1/play-services-measurement-api-17.2.1.aar/1a4ebf90763444f543bc945f89508f33/AndroidManifest.xml:27:9-33:19
 MERGED from [com.google.firebase:firebase-storage:17.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/jetified-firebase-storage-17.0.0.aar/4b132b2285e307dfb6b9cf0e142a90bd/AndroidManifest.xml:30:9-34:19
 MERGED from [com.google.firebase:firebase-storage:17.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/jetified-firebase-storage-17.0.0.aar/4b132b2285e307dfb6b9cf0e142a90bd/AndroidManifest.xml:30:9-34:19
-MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-19.0.0.aar/bb030f911d0015108968ac924fad8630/AndroidManifest.xml:29:9-35:19
-MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-19.0.0.aar/bb030f911d0015108968ac924fad8630/AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.firebase:firebase-iid:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-20.0.0.aar/0e39813f04fa091174ce3418cc9d52f9/AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.firebase:firebase-iid:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-20.0.0.aar/0e39813f04fa091174ce3418cc9d52f9/AndroidManifest.xml:29:9-35:19
 MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/jetified-firebase-common-19.3.0.aar/1246847f5082775e5d6def0d6e256bb3/AndroidManifest.xml:32:9-36:35
 MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/jetified-firebase-common-19.3.0.aar/1246847f5082775e5d6def0d6e256bb3/AndroidManifest.xml:32:9-36:35
 	android:exported
@@ -491,6 +503,22 @@ ADDED from [:firebase_storage] /Users/yee/Desktop/WaDon_Combine/build/firebase_s
 		ADDED from [:firebase_storage] /Users/yee/Desktop/WaDon_Combine/build/firebase_storage/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:11:17-82
 	android:name
 		ADDED from [:firebase_storage] /Users/yee/Desktop/WaDon_Combine/build/firebase_storage/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:10:17-126
+service#io.flutter.plugins.firebasemessaging.FlutterFirebaseMessagingService
+ADDED from [:firebase_messaging] /Users/yee/Desktop/WaDon_Combine/build/firebase_messaging/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:8:9-12:19
+	android:name
+		ADDED from [:firebase_messaging] /Users/yee/Desktop/WaDon_Combine/build/firebase_messaging/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:8:18-101
+intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
+ADDED from [:firebase_messaging] /Users/yee/Desktop/WaDon_Combine/build/firebase_messaging/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:9:13-11:29
+action#com.google.firebase.MESSAGING_EVENT
+ADDED from [:firebase_messaging] /Users/yee/Desktop/WaDon_Combine/build/firebase_messaging/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:10:17-78
+	android:name
+		ADDED from [:firebase_messaging] /Users/yee/Desktop/WaDon_Combine/build/firebase_messaging/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:10:25-75
+meta-data#com.google.firebase.components:io.flutter.plugins.firebasemessaging.FlutterFirebaseAppRegistrar
+ADDED from [:firebase_messaging] /Users/yee/Desktop/WaDon_Combine/build/firebase_messaging/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:14:13-16:85
+	android:value
+		ADDED from [:firebase_messaging] /Users/yee/Desktop/WaDon_Combine/build/firebase_messaging/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:16:17-82
+	android:name
+		ADDED from [:firebase_messaging] /Users/yee/Desktop/WaDon_Combine/build/firebase_messaging/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:15:17-127
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from [:image_picker] /Users/yee/Desktop/WaDon_Combine/build/image_picker/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-80
 	android:name
@@ -583,30 +611,36 @@ ADDED from [com.google.firebase:firebase-storage:17.0.0] /Users/yee/.gradle/cach
 		ADDED from [com.google.firebase:firebase-storage:17.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/jetified-firebase-storage-17.0.0.aar/4b132b2285e307dfb6b9cf0e142a90bd/AndroidManifest.xml:33:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-storage:17.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/jetified-firebase-storage-17.0.0.aar/4b132b2285e307dfb6b9cf0e142a90bd/AndroidManifest.xml:32:17-107
-uses-permission#com.google.android.c2dm.permission.RECEIVE
-ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-19.0.0.aar/bb030f911d0015108968ac924fad8630/AndroidManifest.xml:26:5-82
-	android:name
-		ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-19.0.0.aar/bb030f911d0015108968ac924fad8630/AndroidManifest.xml:26:22-79
-meta-data#com.google.firebase.components:com.google.firebase.iid.Registrar
-ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-19.0.0.aar/bb030f911d0015108968ac924fad8630/AndroidManifest.xml:32:13-34:85
-	android:value
-		ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-19.0.0.aar/bb030f911d0015108968ac924fad8630/AndroidManifest.xml:34:17-82
-	android:name
-		ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-19.0.0.aar/bb030f911d0015108968ac924fad8630/AndroidManifest.xml:33:17-96
-receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
-ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-19.0.0.aar/bb030f911d0015108968ac924fad8630/AndroidManifest.xml:37:9-44:20
+service#com.google.firebase.messaging.FirebaseMessagingService
+ADDED from [com.google.firebase:firebase-messaging:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/jetified-firebase-messaging-20.0.0.aar/4abf30a8ec267ce44eec70ec64c63dcc/AndroidManifest.xml:28:9-34:19
 	android:exported
-		ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-19.0.0.aar/bb030f911d0015108968ac924fad8630/AndroidManifest.xml:39:13-36
+		ADDED from [com.google.firebase:firebase-messaging:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/jetified-firebase-messaging-20.0.0.aar/4abf30a8ec267ce44eec70ec64c63dcc/AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/jetified-firebase-messaging-20.0.0.aar/4abf30a8ec267ce44eec70ec64c63dcc/AndroidManifest.xml:29:13-82
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-20.0.0.aar/0e39813f04fa091174ce3418cc9d52f9/AndroidManifest.xml:26:5-82
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-20.0.0.aar/0e39813f04fa091174ce3418cc9d52f9/AndroidManifest.xml:26:22-79
+meta-data#com.google.firebase.components:com.google.firebase.iid.Registrar
+ADDED from [com.google.firebase:firebase-iid:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-20.0.0.aar/0e39813f04fa091174ce3418cc9d52f9/AndroidManifest.xml:32:13-34:85
+	android:value
+		ADDED from [com.google.firebase:firebase-iid:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-20.0.0.aar/0e39813f04fa091174ce3418cc9d52f9/AndroidManifest.xml:34:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-20.0.0.aar/0e39813f04fa091174ce3418cc9d52f9/AndroidManifest.xml:33:17-96
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-20.0.0.aar/0e39813f04fa091174ce3418cc9d52f9/AndroidManifest.xml:37:9-44:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-20.0.0.aar/0e39813f04fa091174ce3418cc9d52f9/AndroidManifest.xml:39:13-36
 	android:permission
-		ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-19.0.0.aar/bb030f911d0015108968ac924fad8630/AndroidManifest.xml:40:13-73
+		ADDED from [com.google.firebase:firebase-iid:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-20.0.0.aar/0e39813f04fa091174ce3418cc9d52f9/AndroidManifest.xml:40:13-73
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-19.0.0.aar/bb030f911d0015108968ac924fad8630/AndroidManifest.xml:38:13-78
+		ADDED from [com.google.firebase:firebase-iid:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-20.0.0.aar/0e39813f04fa091174ce3418cc9d52f9/AndroidManifest.xml:38:13-78
 intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE
-ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-19.0.0.aar/bb030f911d0015108968ac924fad8630/AndroidManifest.xml:41:13-43:29
+ADDED from [com.google.firebase:firebase-iid:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-20.0.0.aar/0e39813f04fa091174ce3418cc9d52f9/AndroidManifest.xml:41:13-43:29
 action#com.google.android.c2dm.intent.RECEIVE
-ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-19.0.0.aar/bb030f911d0015108968ac924fad8630/AndroidManifest.xml:42:17-81
+ADDED from [com.google.firebase:firebase-iid:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-20.0.0.aar/0e39813f04fa091174ce3418cc9d52f9/AndroidManifest.xml:42:17-81
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-19.0.0.aar/bb030f911d0015108968ac924fad8630/AndroidManifest.xml:42:25-78
+		ADDED from [com.google.firebase:firebase-iid:20.0.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/firebase-iid-20.0.0.aar/0e39813f04fa091174ce3418cc9d52f9/AndroidManifest.xml:42:25-78
 activity#com.google.android.gms.common.api.GoogleApiActivity
 ADDED from [com.google.android.gms:play-services-base:17.1.0] /Users/yee/.gradle/caches/transforms-1/files-1.1/play-services-base-17.1.0.aar/e80c5436036f94321f42f7189225512d/AndroidManifest.xml:23:9-26:75
 	android:exported
