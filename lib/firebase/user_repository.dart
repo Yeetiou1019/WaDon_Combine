@@ -43,7 +43,7 @@ class UserRepository {
     return _firestore
         .collection("users")
         .document(email)
-        .setData({'email': email, 'club': cId,'gender':gender,'tel':tel,'name':name,'student':student,});
+        .setData({'email': email, 'club': cId,'gender':gender,'tel':tel,'name':name,'studentID':student,'property':false,'user_picture':'https://firebasestorage.googleapis.com/v0/b/wadone-8ae44.appspot.com/o/man.jpg?alt=media&token=7ae63ec1-0d99-4b99-87da-fec2792b3c6a'});
   }
 
 
@@ -68,7 +68,7 @@ Future<String> getUserName(String account) async {
 // 用使用者信箱當作索引值去找到對應的文件
   var doc = await Firestore.instance.collection('users').document(account).get();
   if (doc.exists) {
-    return doc.data['u_name'];
+    return doc.data['name'];
   }
   return '';
 }

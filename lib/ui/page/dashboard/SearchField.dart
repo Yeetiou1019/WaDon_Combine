@@ -40,23 +40,21 @@ class _SearchFieldState extends State<SearchField> {
     QuerySnapshot qn = await firestore.collection('club').getDocuments();
     return  qn.documents;
   } 
-  String imageUrl ;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Algolia Search"),
-      ),
-      body: Container(
+    return  Container(
         padding: const EdgeInsets.all(4.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text("搜尋"),
-            TextField(
+            SizedBox(
+              width: 500,
+            child:TextField(
+              
               controller: _searchText,
               decoration: InputDecoration(hintText: "標題、社團..."),
+            ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -93,24 +91,17 @@ class _SearchFieldState extends State<SearchField> {
                                   );
                                 }else{
                                   for(var i = 0;i<=index;i++){
-                                    if(snapshot.data[i].data['c_name'] = _results[index].data['club_id']){
+                                    if(snapshot.data[i].data['c_name'] == _results[index].data['club_id']){
                                       String imageUrl = snapshot.data[i].data['image'];
                                       break;
                                     }
                                   }
                                   return ListTile(
-                                    leading: CircleAvatar(
-                                      child:ClipOval(
-                                        child: Image.network(
-                                          imageUrl),
-                                        ),
-                                      backgroundImage: NetworkImage(imageUrl),
-                                    ),
                                     title: Text(snap.data["p_title"]),
                                     subtitle:
                                       Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [Text(snap.data["p_title"]), Text(snap.data["club_id"])]
+                                        children: [Text(snap.data["p_name"]), Text(snap.data["club_id"])]
                                       ),
                                     );
                                 }
@@ -121,7 +112,7 @@ class _SearchFieldState extends State<SearchField> {
             ),
           ],
         ),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+     // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

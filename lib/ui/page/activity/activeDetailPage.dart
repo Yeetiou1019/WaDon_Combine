@@ -132,13 +132,13 @@ class _ActiveDetailPageState extends State<ActiveDetailPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          '活動時間：108年12月25號 (修但幾勒)',
+                          '活動時間：108年12月25號',
 
                           ///暫時沒辦法
                           style: TextStyle(fontSize: 18.0),
                         ),
                         Text(
-                          '活動時間：17：30~21：00 (金罵謀銀)',
+                          '活動時間：17：30~21：00',
 
                           ///暫時沒辦法
                           style: TextStyle(fontSize: 18.0),
@@ -155,9 +155,10 @@ class _ActiveDetailPageState extends State<ActiveDetailPage> {
                           '活動内容：' + detailsList[index].description,
                           style: TextStyle(fontSize: 18.0),
                         ),
-                        Container(
-                          child: Image.asset('assets/dog_akitainu.png'),
-                        ),
+                        // SizedBox(
+                        //   height: 100,
+                        //   child: Image.asset('assets/dog_akitainu.png'),
+                        // ),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: <Widget>[],
@@ -183,7 +184,9 @@ class _ActiveDetailPageState extends State<ActiveDetailPage> {
         textColor: Colors.white,
         onPressed: () {
           _dialog();
-
+          // setState(() {
+          //   this.dispose();
+          // });
           ///user add act to actlist
           Firestore.instance
               .collection('users')
@@ -242,7 +245,7 @@ class _ActiveDetailPageState extends State<ActiveDetailPage> {
               style: TextStyle(color: Colors.white, fontSize: 18.0),
             ),
             background: Image.asset(
-              "assets/dog_akitainu.png",
+              "assets/nkust3.jpg",
               fit: BoxFit.fitWidth,
             ),
           ),

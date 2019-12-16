@@ -10,7 +10,9 @@ class Create extends StatefulWidget {
 class _CreateState extends State<Create> {
   Managerbloc _bloc;
   TextEditingController myController = TextEditingController();
+  var _selectType;
 
+  String statue=('請選擇');
   void didChangeDependencies() async {
     super.didChangeDependencies();
     _bloc = Provider.of<Managerbloc>(context);
@@ -296,17 +298,131 @@ Widget plocaltion() {
     return StreamBuilder(
         stream: _bloc.statue,
         builder: (context, AsyncSnapshot<String> snapshot) {
-          return TextField(
-            onChanged: _bloc.changeststue,
-            obscureText: false,
-            decoration: InputDecoration(
-                contentPadding: EdgeInsets.all(10.0),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                ),
-                labelText: '活動狀態',
-                errorText: snapshot.error),
+          int ststue=0;
+          return Container(
+              height: 35,
+              width: MediaQuery.of(context).size.width - 140,
+              decoration: BoxDecoration(
+                  border:Border(bottom:BorderSide(width: 1,color: Color(0xffe5e5e5)) )
+              ),
+              child: new DropdownButtonHideUnderline(
+                  child: new DropdownButton(
+                    items: [
+                      new DropdownMenuItem(
+                        child: new Text('報名中'),
+                        value: 0,
+                      ),
+                      new DropdownMenuItem(
+                        child: new Text('活動中'),
+                        value: 1,
+                      ),
+                      new DropdownMenuItem(
+                        child: new Text('已結束'),
+                        value: 2,
+                      ),
+                    ],
+                    
+                    hint: new Text(statue),
+                    onChanged: (value){
+                      setState(() {
+                        if(value ==0){
+                          _bloc.changeststue('報名中');
+                          statue=('報名中');
+                        }
+                        else if(value == 1){
+                          _bloc.changeststue('活動中');
+                          statue=('活動中');
+                        }
+                        else{
+                          _bloc.changeststue('已結束');
+                          statue=('已結束');
+                        }
+                      });
+                    },
+
+                    value: _selectType,
+                    elevation: 24,//设置阴影的高度
+                    style: new TextStyle(//设置文本框里面文字的样式
+                      color: Color(0xff4a4a4a),
+                    ),
+                  )
+              )
           );
         });
   }
+
+  
+
+//   Widget actstartField() {
+//     return StreamBuilder(
+//         stream: _bloc.actstart,
+//         builder: (context, AsyncSnapshot<Timestamp> snapshot) {
+//           return TextField(
+//             onChanged: _bloc.changeid,
+//             obscureText: false,
+//             decoration: InputDecoration(
+//                 contentPadding: EdgeInsets.all(10.0),
+//                 border: OutlineInputBorder(
+//                   borderRadius: BorderRadius.circular(15.0),
+//                 ),
+//                 hintText: 'enter something',
+//                 errorText: snapshot.error),
+//           );
+//         });
+//   }
+
+//   Widget actendField() {
+//     return StreamBuilder(
+//         stream: _bloc.pid,
+//         builder: (context, AsyncSnapshot<String> snapshot) {
+//           return TextField(
+//             onChanged: _bloc.changeid,
+//             obscureText: false,
+//             decoration: InputDecoration(
+//                 contentPadding: EdgeInsets.all(10.0),
+//                 border: OutlineInputBorder(
+//                   borderRadius: BorderRadius.circular(15.0),
+//                 ),
+//                 hintText: 'enter something',
+//                 errorText: snapshot.error),
+//           );
+//         });
+//   }
+
+//   Widget singupField() {
+//     return StreamBuilder(
+//         stream: _bloc.pid,
+//         builder: (context, AsyncSnapshot<String> snapshot) {
+//           return TextField(
+//             onChanged: _bloc.changeid,
+//             obscureText: false,
+//             decoration: InputDecoration(
+//                 contentPadding: EdgeInsets.all(10.0),
+//                 border: OutlineInputBorder(
+//                   borderRadius: BorderRadius.circular(15.0),
+//                 ),
+//                 hintText: 'enter something',
+//                 errorText: snapshot.error),
+//           );
+//         });
+//   }
+
+//   Widget singendField() {
+//     return StreamBuilder(
+//         stream: _bloc.pid,
+//         builder: (context, AsyncSnapshot<String> snapshot) {
+//           return TextField(
+//             onChanged: _bloc.changeid,
+//             obscureText: false,
+//             decoration: InputDecoration(
+//                 contentPadding: EdgeInsets.all(10.0),
+//                 border: OutlineInputBorder(
+//                   borderRadius: BorderRadius.circular(15.0),
+//                 ),
+//                 hintText: 'enter something',
+//                 errorText: snapshot.error),
+//           );
+//         });
+//   }
+// }
 }

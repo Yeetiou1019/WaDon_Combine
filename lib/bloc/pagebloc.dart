@@ -62,24 +62,24 @@ class PageBloc with ChangeNotifier {
     _useraccount.close();
   }
 
-  List mapToList({DocumentSnapshot doc, List<DocumentSnapshot> docList}) {
-    if (docList != null) {
-      List<Active> activeList = [];
-      docList.forEach((document) {
-        String club = document.data['c_id'];
-        Map<String, String> active = document.data['posts'] != null
-            ? document.data['posts'].cast<String, String>()
-            : null;
-        if (active != null) {
-          active.forEach((title, description) {
-            Active active = Active(club, title, description);
-            activeList.add(active);
-          });
-        }
-      });
-      return activeList;
-    }
-  }
+  // List mapToList({DocumentSnapshot doc, List<DocumentSnapshot> docList}) {
+  //   if (docList != null) {
+  //     List<Active> activeList = [];
+  //     docList.forEach((document) {
+  //       String club = document.data['c_id'];
+  //       Map<String, String> active = document.data['posts'] != null
+  //           ? document.data['posts'].cast<String, String>()
+  //           : null;
+  //       if (active != null) {
+  //         active.forEach((title, description) {
+  //           Active active = Active(club, title, description);
+  //           activeList.add(active);
+  //         });
+  //       }
+  //     });
+  //     return activeList;
+  //   }
+  // }
 
   List detailToList({DocumentSnapshot doc, List<DocumentSnapshot> docList}) {
     if (docList != null) {

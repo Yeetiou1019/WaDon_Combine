@@ -255,7 +255,7 @@ onChangeDropdownGender(genderList selectedGender) {
                     children: <Widget>[
                       SizedBox(
                     height: 60.0,
-                    width: 170,
+                    width: 150,
                     child: TextFormField(
                     controller: _studentConfirmController,
                     decoration: InputDecoration(
@@ -272,7 +272,7 @@ onChangeDropdownGender(genderList selectedGender) {
                   ),
                   SizedBox(
                     height: 60.0,
-                    width: 170,
+                    width: 130,
                     child: TextFormField(
                     controller: _nameConfirmController,
                     decoration: InputDecoration(
@@ -329,7 +329,7 @@ onChangeDropdownGender(genderList selectedGender) {
                       ),
                     SizedBox(
                     height: 60.0,
-                    width: 270,
+                    width: 200,
                     child: TextFormField(
                     controller: _telConfirmController,
                     decoration: InputDecoration(

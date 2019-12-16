@@ -8,6 +8,8 @@ import 'package:wadone_main/ui/page/activity/activeDetailPage.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:wadone_main/ui/page/activity/ActivityPage.dart';
+import '../dashboard/SearchField.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 class DashboardPage extends StatefulWidget {
   final String account;
@@ -48,7 +50,6 @@ class _DashboardState extends State<DashboardPage> {
                         ),
                       ),
                   children: [
-                    buildTextfield(),
                     buttonGroup(),
                     buildCarousel(),
                     body()
@@ -156,10 +157,10 @@ class _DashboardState extends State<DashboardPage> {
         showIndicator: true,
         indicatorBgPadding: 7.0,
         images: [
-          NetworkImage(
-              'https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
-          NetworkImage(
-              'https://cdn-images-1.medium.com/max/2000/1*wnIEgP1gNMrK5gZU7QS0-A.jpeg'),
+          AssetImage(
+              'assets/nkust1.png'),
+          AssetImage(
+              'assets/nkust2.png'),
         ],
       ),
     );
@@ -184,9 +185,9 @@ Widget buttonGroup() {
     mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: <Widget>[
       buildbutton(),
-      buildbutton(),
-      buildbutton(),
-      buildbutton(),
+      buildbutton2(),
+      buildbutton3(),
+      buildbutton4(),
     ],
   );
 }
@@ -198,7 +199,49 @@ Widget buildbutton() {
       borderSide: BorderSide(
         color: Colors.cyan[300],
       ),
-      child: new Text("#活動"),
+      child: new Text("#演唱會"),
+      textColor: Colors.blueGrey,
+      onPressed: () {},
+      shape: new RoundedRectangleBorder(
+          borderRadius: new BorderRadius.circular(40.0)));
+}
+
+Widget buildbutton2() {
+  ///foreach and build every #hastags from firestore
+  return OutlineButton(
+      hoverColor: Colors.grey[800],
+      borderSide: BorderSide(
+        color: Colors.cyan[300],
+      ),
+      child: new Text("#校慶"),
+      textColor: Colors.blueGrey,
+      onPressed: () {},
+      shape: new RoundedRectangleBorder(
+          borderRadius: new BorderRadius.circular(40.0)));
+}
+
+Widget buildbutton3() {
+  ///foreach and build every #hastags from firestore
+  return OutlineButton(
+      hoverColor: Colors.grey[800],
+      borderSide: BorderSide(
+        color: Colors.cyan[300],
+      ),
+      child: new Text("#智商系"),
+      textColor: Colors.blueGrey,
+      onPressed: () {},
+      shape: new RoundedRectangleBorder(
+          borderRadius: new BorderRadius.circular(40.0)));
+}
+
+Widget buildbutton4() {
+  ///foreach and build every #hastags from firestore
+  return OutlineButton(
+      hoverColor: Colors.grey[800],
+      borderSide: BorderSide(
+        color: Colors.cyan[300],
+      ),
+      child: new Text("#國樂"),
       textColor: Colors.blueGrey,
       onPressed: () {},
       shape: new RoundedRectangleBorder(

@@ -48,7 +48,7 @@ class _DetailSubscriptionState extends State<DetailSubscription> {
           if (actList.isNotEmpty) {
             return buildList(actList);
           } else {
-            return Text("data doesn't exist");
+            return Text("尚未有任何訂閱！");
           }
         }
         return Center(

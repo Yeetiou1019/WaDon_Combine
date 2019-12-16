@@ -25,10 +25,17 @@ class _ActivityPageState extends State<ActivityPage> {
   }
 
   @override
+  initState()  {
+    super.initState();
+  }
+
+  @override
   void dispose() {
-    pageBloc.dispose();
+    //pageBloc.dispose();
     super.dispose();
   }
+
+  
 
   @override
   Widget build(BuildContext context) {

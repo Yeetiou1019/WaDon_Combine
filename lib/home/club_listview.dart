@@ -29,6 +29,7 @@ Future createSubClub() async {
     .setData({
         'c_name': cName,
         'property': this.category,
+        'image':'https://firebasestorage.googleapis.com/v0/b/wadone-8ae44.appspot.com/o/ic.png?alt=media&token=11fbca18-f70d-422a-baaa-fbfed095c346',
       });
 }
 
